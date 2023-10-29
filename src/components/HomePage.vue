@@ -17,7 +17,7 @@
     <button class="buttonSignUp">Sign Up Now</button>
   </div>
   </div>
-  <div class="home">
+  <div class="findbuddiesBlock">
   <div class="findBuddies">
     <h1 class="titlefindYourActivityBuddies">Find Your Activity Buddies</h1>
     <p class="findYourActivityBuddiesContext1">No more searching through countless<br> forums and
@@ -28,12 +28,14 @@
   </div>
   <div class="right-placeholderFindyourBuddiesPhoto"></div>
   </div>
-   <div class="home">
+   <div class="organizeActivitiesBlock">
+    <div class="left-placeholderFindyourBuddiesPhoto"></div>
+   <div class="organizeActivities">
     <h1 class="titleOrganizeActivities">Organize Activities <br> Effortlessly</h1>
     <p class="OrganizeActivitiesContext1">Whether it’s weekend hikes, tennis matches, or
     <br>group yoga sessions, ActyIn makes it easy to
     <br>coordinate activities with your new-found friends.</p>
-  <div class="left-placeholderFindyourBuddiesPhoto"></div>
+   </div>
   </div>
    <div class="home">
     <div class="left-placeholderFeePlan">
@@ -107,6 +109,47 @@ export default {
 }
 
 /*ok */
+.findbuddiesBlock {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #000;
+  color: #0077cc;
+  font-family: 'Limelight', sans-serif;
+  overflow: hidden;
+  margin-top: -30%;
+}
+
+.organizeActivitiesBlock {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #000;
+  color: #0077cc;
+  font-family: 'Limelight', sans-serif;
+  overflow: hidden;
+  margin-top: -30%;
+}
+
+/*ok */
+.organizeActivities {
+  position: relative;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  background-color: #000;
+  color: #0077cc;
+  font-family: 'Limelight', sans-serif;
+  overflow: hidden;
+  margin-top: 0px;
+}
+
+/*ok */
 .getStarted {
   position: relative;
   display: block;
@@ -122,7 +165,7 @@ export default {
 
 /*ok */
 .findbuddies {
-   position: relative;
+  position: relative;
   display: block;
   align-items: center;
   justify-content: center;
@@ -172,11 +215,18 @@ export default {
 }
 
 .left-placeholderFindyourBuddiesPhoto {
-  width: 600px;
-  height: 600px;
+  width: 400px;
+  height: 350px;
   background-color: #333;
-  border-radius: 300px 70px 70px 70px;
+  border-radius: 150px 70px 70px 70px;
   z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  margin-right: 5%;
+  margin-left: 10%;
 }
 
 .left-placeholderFeePlan {
@@ -204,7 +254,7 @@ export default {
 /*ok */
 .title {
   position: absolute;
-  font-size: 100px;
+  font-size: 94px;
   margin: 0;
   color: #457B9D;
   font-family: 'Limelight', sans-serif;
@@ -264,11 +314,17 @@ export default {
 }
 
 .titleOrganizeActivities {
-  font-size: 3em;
+  font-size: 2.5em;
   margin: 0;
   color: #457B9D;
   font-family: 'Limelight', sans-serif;
   z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: right;
+  align-items: center;
+  justify-content: center;
+  margin-top: 65%;
 }
 
 .titleFreePlan {
