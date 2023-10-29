@@ -3,12 +3,12 @@
    <div class="left-placeholder"></div>
     <h1 class="title">ACTYIN</h1>
     <div class="right-placeholder"></div>
-    <div class="buttons">
+    <div class="home">
       <button class="buttonFindPartners">Find Partners</button>
       <button class="buttonJoinNow">Join Now</button>
   </div>
   </div>
-  <div>
+  <div class="home">
     <h1 class="titleGetStarted">Get Started</h1>
     <h1 class="GetStartedContext1">Discover countless activities near you
        and match with compatible</h1>
@@ -16,7 +16,7 @@
     <h1 class="GetStartedContext3">Don’t just sit there, get active with ActyIn!</h1>
     <button class="buttonSignUp">Sign Up Now</button>
   </div>
-  <div>
+  <div class="home">
     <h1 class="titlefindYourActivityBuddies">Find Your Activity Buddies</h1>
     <h1 class="findYourActivityBuddiesContext1">No more searching through countless forums and</h1>
     <h1 class="findYourActivityBuddiesContext2"> groups for the perfect match. Our intelligent</h1>
@@ -24,14 +24,14 @@
   <h1 class="findYourActivityBuddiesContext2">join you on your next adventure!</h1>
   <div class="right-placeholderFindyourBuddiesPhoto"></div>
   </div>
-   <div>
+   <div class="home">
     <h1 class="titleOrganizeActivities">Organize Activities <br> Effortlessly</h1>
     <h1 class="OrganizeActivitiesContext1">Whether it’s weekend hikes, tennis matches, or</h1>
     <h1 class="OrganizeActivitiesContext2"> group yoga sessions, ActyIn makes it easy to </h1>
   <h1 class="OrganizeActivitiesContext2">coordinate activities with your new-found friends.</h1>
   <div class="left-placeholderFindyourBuddiesPhoto"></div>
   </div>
-   <div>
+   <div class="home">
     <div class="left-placeholderFeePlan">
     <h1 class="titleFreePlan">Free Plan</h1>
     <h1 class="planPrice">$0/mo<p></p></h1>
@@ -90,6 +90,7 @@ export default {
 <style scoped>
 
 .home {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,15 +99,16 @@ export default {
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
-  margin-left: -300px;
 }
 
 .right-placeholder {
   width: 300px;
   height: 500px;
+  position: absolute;
   background-color: #333;
   border-radius: 20px 20px 20px 20px;
   transform: rotate(18deg);
+  right: 12%;
   z-index: 1;
 }
 
@@ -153,19 +155,27 @@ export default {
 .left-placeholder {
   width: 300px;
   height: 500px;
+  position: absolute;
   background-color: #333;
   border-radius: 20px 20px 20px 20px;
   transform: rotate(-18deg);
+  left: 12%;
   z-index: 1;
 }
 
 .title {
-  font-size: 13em;
+  position: absolute;
+  font-size: 150px;
   margin: 0;
   color: #457B9D;
   font-family: 'Limelight', sans-serif;
   z-index: 2;
-  margin-top: -100px;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  vertical-align:top;
+  margin-top: -150px;
+  z-index: 2;
 }
 
 .titleQuestions
@@ -406,6 +416,8 @@ export default {
   border: none;
   cursor: pointer;
   border-radius: 50px 50px 50px 50px;
+  margin-top: 30%;
+  z-index: 2;
 }
 
 .buttonJoinNow {
@@ -416,6 +428,8 @@ export default {
   border: none;
   cursor: pointer;
   border-radius: 50px 50px 50px 50px;
+  margin-top: 30%;
+  z-index: 2;
 }
 
 .buttonSignUp {
@@ -428,6 +442,7 @@ export default {
   border-radius: 50px 50px 50px 50px;
   margin-top: 30px;
   margin-left: 400px;
+  z-index: 2;
 }
 
 .buttonPlansGetStarted,
@@ -441,6 +456,7 @@ export default {
   border-radius: 10px 10px 10px 10px;
   margin-top: 50px;
   margin-left: 200px;
+  z-index: 2;
 }
 
 .buttonSubscribe{
@@ -453,6 +469,7 @@ export default {
   border-radius: 10px 10px 10px 10px;
   margin-top: 50px;
   margin-left: 20px;
+  z-index: 2;
 }
 
 .email-input {
@@ -465,6 +482,7 @@ export default {
   border-radius: 10px 10px 10px 10px;
   margin-top: 50px;
   margin-left: 200px;
+  z-index: 2;
 }
 
 </style>
