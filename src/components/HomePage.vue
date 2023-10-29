@@ -20,10 +20,10 @@
   <div class="home">
   <div class="findBuddies">
     <h1 class="titlefindYourActivityBuddies">Find Your Activity Buddies</h1>
-    <p class="findYourActivityBuddiesContext1">No more searching through countless forums and
-    <br>groups for the perfect match. Our intelligent
-    <br>algorithm helps you find like-minded individuals to
-    <br>join you on your next adventure!
+    <p class="findYourActivityBuddiesContext1">No more searching through countless<br> forums and
+    groups for the<br> perfect match. Our intelligent
+    <br>algorithm helps you find like-minded<br> individuals to
+    join you on<br> your next adventure!
     </p>
   </div>
   <div class="right-placeholderFindyourBuddiesPhoto"></div>
@@ -99,7 +99,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 77vh;
+  height: 75vh;
   background-color: #000;
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
@@ -112,7 +112,7 @@ export default {
   display: block;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  height: 60vh;
   background-color: #000;
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
@@ -126,7 +126,7 @@ export default {
   display: block;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 30vh;
   background-color: #000;
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
@@ -146,12 +146,19 @@ export default {
   z-index: 1;
 }
 
+/*ok */
 .right-placeholderFindyourBuddiesPhoto {
-  width: 600px;
-  height: 600px;
+  width: 400px;
+  height: 400px;
   background-color: #333;
   border-radius: 70px 70px 70px 70px;
   z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: right;
+  margin-left: 10%;
 }
 
 .right-placeholderPremiumPlan {
@@ -297,11 +304,17 @@ export default {
 }
 
 .OrganizeActivitiesContext1 {
-  font-size: 20px;
+  font-size: 18px;
   margin: 0;
   color: #457B9D;
   font-family: 'Roboto', sans-serif;
   z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  font-weight: 400;
 }
 
 .OrganizeActivitiesContext2 {
@@ -322,17 +335,17 @@ export default {
 
 /*ok */
 .findYourActivityBuddiesContext1 {
-  font-size: 30px;
+  font-size: 25px;
   margin: 0;
   color: #457B9D;
   font-family: 'Roboto', sans-serif;
   z-index: 2;
   position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
+  flex-direction: left;
+  align-items: left;
+  justify-content: left;
+  font-weight: 400;
 }
 
 /*ok */
@@ -347,7 +360,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .QuestionsContext1
