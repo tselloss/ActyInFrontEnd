@@ -1,7 +1,8 @@
+<!-- eslint-disable max-len -->
 <template>
   <div class="home">
    <div class="left-placeholder"></div>
-    <h1 class="title">ACTYIN</h1>
+    <h1 class="title" >ACTYIN</h1>
     <div class="right-placeholder"></div>
     <div class="home">
       <button class="buttonFindPartners">Find Partners</button>
@@ -9,26 +10,29 @@
   </div>
   </div>
   <div class="home">
+  <div class="getStarted">
     <h1 class="titleGetStarted">Get Started</h1>
-    <h1 class="GetStartedContext1">Discover countless activities near you
-       and match with compatible</h1>
-    <h1 class="GetStartedContext3">partners who share your interests.!</h1>
-    <h1 class="GetStartedContext3">Don’t just sit there, get active with ActyIn!</h1>
+    <p class="GetStartedContext1">Discover countless activities near you<br>and match with compatible partners who share your interests.!
+    <br>Don’t just sit there, get active with ActyIn!</p>
     <button class="buttonSignUp">Sign Up Now</button>
   </div>
+  </div>
   <div class="home">
+  <div class="findBuddies">
     <h1 class="titlefindYourActivityBuddies">Find Your Activity Buddies</h1>
-    <h1 class="findYourActivityBuddiesContext1">No more searching through countless forums and</h1>
-    <h1 class="findYourActivityBuddiesContext2"> groups for the perfect match. Our intelligent</h1>
-<h1 class="findYourActivityBuddiesContext2">algorithm helps you find like-minded individuals to</h1>
-  <h1 class="findYourActivityBuddiesContext2">join you on your next adventure!</h1>
+    <p class="findYourActivityBuddiesContext1">No more searching through countless forums and
+    <br>groups for the perfect match. Our intelligent
+    <br>algorithm helps you find like-minded individuals to
+    <br>join you on your next adventure!
+    </p>
+  </div>
   <div class="right-placeholderFindyourBuddiesPhoto"></div>
   </div>
    <div class="home">
     <h1 class="titleOrganizeActivities">Organize Activities <br> Effortlessly</h1>
-    <h1 class="OrganizeActivitiesContext1">Whether it’s weekend hikes, tennis matches, or</h1>
-    <h1 class="OrganizeActivitiesContext2"> group yoga sessions, ActyIn makes it easy to </h1>
-  <h1 class="OrganizeActivitiesContext2">coordinate activities with your new-found friends.</h1>
+    <p class="OrganizeActivitiesContext1">Whether it’s weekend hikes, tennis matches, or
+    <br>group yoga sessions, ActyIn makes it easy to
+    <br>coordinate activities with your new-found friends.</p>
   <div class="left-placeholderFindyourBuddiesPhoto"></div>
   </div>
    <div class="home">
@@ -52,19 +56,20 @@ Unlimited Activities
 Priority Support<p></p></h1>
 <button class="buttonUpgrade">Upgrade Now</button>
     </div>
-    <div>
+    </div>
+    <div class="home">
     <h1 class="titleQuestions">Frequently Asked Questions</h1>
     <h1 class="QuestionsContext1">How does the matching process work?</h1>
-    <h1 class="QuestionsContext3">Our intelligent algorithm analyzes your selected</h1>
-    <h1 class="QuestionsContext3">interests, location, and preferred time to find</h1>
-    <h1 class="QuestionsContext3"> potential activity partners. It then provides you with</h1>
-    <h1 class="QuestionsContext3">a list of compatible matches to choose from.</h1>
+    <p class="QuestionsContext3">Our intelligent algorithm analyzes your selected
+    <br>interests, location, and preferred time to find
+    <br>potential activity partners. It then provides you with
+    <br>a list of compatible matches to choose from.</p>
     <h1 class="QuestionsContext2">Is my personal information safe?</h1>
-    <h1 class="QuestionsContext4">At ActyIn, we take your privacy very seriously. Your </h1>
-    <h1 class="QuestionsContext4">personal information is securely stored and never</h1>
-    <h1 class="QuestionsContext4">shared with any third parties without your consent.</h1>
+    <p class="QuestionsContext4">At ActyIn, we take your privacy very seriously. Your
+    <br>personal information is securely stored and never
+    <br>shared with any third parties without your consent.</p>
   </div>
-  <div>
+  <div class="home">
     <h1 class="titleStayTuned">Stay Updated</h1>
     <h1 class="StayTunedContext1">Be the first to know about new features,special offers</h1>
     <h1 class="StayTunedContext3">and upcoming events. Subscribe to our newsletter now and </h1>
@@ -72,9 +77,8 @@ Priority Support<p></p></h1>
     <input type="email" placeholder="name@email.com" class="email-input" />
     <button class="buttonSubscribe">Subscribe</button>
   </div>
-  <div>
+  <div class="home">
     <h1 class="CopyRights">© ActyIn 2023. All rights reserved.</h1>
-  </div>
   </div>
 </template>
 
@@ -89,9 +93,37 @@ export default {
 
 <style scoped>
 
+/*ok */
 .home {
   position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 77vh;
+  background-color: #000;
+  color: #0077cc;
+  font-family: 'Limelight', sans-serif;
+  overflow: hidden;
+}
+
+/*ok */
+.getStarted {
+  position: relative;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  background-color: #000;
+  color: #0077cc;
+  font-family: 'Limelight', sans-serif;
+  overflow: hidden;
+  margin-top: 0px;
+}
+
+/*ok */
+.findbuddies {
+   position: relative;
+  display: block;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -99,8 +131,10 @@ export default {
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
+  margin-top: 0px;
 }
 
+/*ok */
 .right-placeholder {
   width: 300px;
   height: 500px;
@@ -118,18 +152,16 @@ export default {
   background-color: #333;
   border-radius: 70px 70px 70px 70px;
   z-index: 1;
-  margin-top: -450px;
-  margin-left: 900px;
 }
 
 .right-placeholderPremiumPlan {
-  width: 600px;
-  height: 430px;
-  background-color: #131010;
-  border-radius: 70px 70px 70px 70px;
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  background-color: #131313;
+  border-radius: 20px 20px 20px 20px;
+  right: 12%;
   z-index: 1;
-  margin-top: -430px;
-  margin-left: 900px;
 }
 
 .left-placeholderFindyourBuddiesPhoto {
@@ -138,20 +170,19 @@ export default {
   background-color: #333;
   border-radius: 300px 70px 70px 70px;
   z-index: 1;
-  margin-top: -400px;
-  margin-left: 200px;
 }
 
 .left-placeholderFeePlan {
-  width: 600px;
-  height: 430px;
-  background-color: #131010;
-  border-radius: 70px 70px 70px 70px;
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  background-color: #131313;
+  border-radius: 20px 20px 20px 20px;
+  left: 12%;
   z-index: 1;
-  margin-top: 150px;
-  margin-left: 200px;
 }
 
+/*ok */
 .left-placeholder {
   width: 300px;
   height: 500px;
@@ -163,9 +194,10 @@ export default {
   z-index: 1;
 }
 
+/*ok */
 .title {
   position: absolute;
-  font-size: 150px;
+  font-size: 100px;
   margin: 0;
   color: #457B9D;
   font-family: 'Limelight', sans-serif;
@@ -185,7 +217,6 @@ export default {
   color: #457B9D;
   font-family: 'Limelight', sans-serif;
   z-index: 2;
-  margin-left: 0px;
   margin-top: 200px;
 }
 
@@ -195,27 +226,34 @@ export default {
   color: #457B9D;
   font-family: 'Limelight', sans-serif;
   z-index: 2;
-  margin-left: 0px;
   margin-top: 200px;
 }
 
+/*ok */
 .titleGetStarted {
   font-size: 3em;
   margin: 0;
   color: #457B9D;
   font-family: 'Limelight', sans-serif;
   z-index: 2;
-  margin-left: 800px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .titlefindYourActivityBuddies {
-  font-size: 3em;
+  font-size: 2.5em;
   margin: 0;
   color: #457B9D;
   font-family: 'Limelight', sans-serif;
   z-index: 2;
-  margin-left: 0px;
-  margin-top: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: left;
+  align-items: left;
+  justify-content: left;
 }
 
 .titleOrganizeActivities {
@@ -224,8 +262,6 @@ export default {
   color: #457B9D;
   font-family: 'Limelight', sans-serif;
   z-index: 2;
-  margin-left: 1000px;
-  margin-top: 400px;
 }
 
 .titleFreePlan {
@@ -234,8 +270,6 @@ export default {
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
   z-index: 2;
-  margin-left: 50px;
-  margin-top: 200px;
 }
 
 .titlePremiumPlan {
@@ -244,8 +278,6 @@ export default {
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
   z-index: 1;
-  margin-left: 50px;
-  margin-top: -100px;
 }
 
 .planPrice {
@@ -254,8 +286,6 @@ export default {
   color: #457B9D;
   font-family: 'Limelight', sans-serif;
   z-index: 1;
-  margin-left: 50px;
-  margin-top: 30px;
 }
 
 .planInfo {
@@ -264,18 +294,14 @@ export default {
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
   z-index: 2;
-  margin-left: 100px;
-  margin-top: 30px;
 }
 
 .OrganizeActivitiesContext1 {
-  font-size: 18px;
+  font-size: 20px;
   margin: 0;
   color: #457B9D;
   font-family: 'Roboto', sans-serif;
   z-index: 2;
-  margin-top: 30px;
-  margin-left: 1000px;
 }
 
 .OrganizeActivitiesContext2 {
@@ -284,7 +310,6 @@ export default {
   color: #457B9D;
   font-family: 'Roboto', sans-serif;
   z-index: 2;
-  margin-left: 1000px;
 }
 
 .StayTunedContext1 {
@@ -293,62 +318,36 @@ export default {
   color: #457B9D;
   font-family: 'Roboto', sans-serif;
   z-index: 2;
-  margin-top: 30px;
-  margin-left: 500px;
 }
 
-.StayTunedContext3{
-  font-size: 18px;
-  margin: 0;
-  color: #457B9D;
-  font-family: 'Roboto', sans-serif;
-  z-index: 2;
-  margin-left: 500px;
-}
-
+/*ok */
 .findYourActivityBuddiesContext1 {
-  font-size: 18px;
+  font-size: 30px;
   margin: 0;
   color: #457B9D;
   font-family: 'Roboto', sans-serif;
   z-index: 2;
-  margin-top: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
 }
 
-.findYourActivityBuddiesContext2{
-  font-size: 18px;
-  margin: 0;
-  color: #457B9D;
-  font-family: 'Roboto', sans-serif;
-  z-index: 2;
-}
-
+/*ok */
 .GetStartedContext1 {
-  font-size: 18px;
+  font-size: 30px;
   margin: 0;
   color: #457B9D;
   font-family: 'Roboto', sans-serif;
   z-index: 2;
-  margin-top: 30px;
-  margin-left: 500px;
-}
-
-.GetStartedContext2 {
-  font-size: 18px;
-  margin: 0;
-  color: #457B9D;
-  font-family: 'Roboto', sans-serif;
-  z-index: 2;
-  margin-left: 500px;
-}
-
-.GetStartedContext3 {
-  font-size: 18px;
-  margin: 0;
-  color: #457B9D;
-  font-family: 'Roboto', sans-serif;
-  z-index: 2;
-  margin-left: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
 }
 
 .QuestionsContext1
@@ -358,8 +357,11 @@ export default {
   color: #457B9D;
   font-family: 'Limelight', sans-serif;
   z-index: 2;
-  margin-top: 60px;
-  margin-left: 300px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
 }
 
 .QuestionsContext2
@@ -369,8 +371,6 @@ export default {
   color: #457B9D;
   font-family: 'Limelight', sans-serif;
   z-index: 2;
-  margin-top: -140px;
-  margin-left: 1000px;
 }
 
 .QuestionsContext3 {
@@ -379,7 +379,6 @@ export default {
   color: #457B9D;
   font-family: 'Roboto', sans-serif;
   z-index: 2;
-  margin-left: 300px;
 }
 
 .QuestionsContext4 {
@@ -388,7 +387,6 @@ export default {
   color: #457B9D;
   font-family: 'Roboto', sans-serif;
   z-index: 2;
-  margin-left: 1000px;
 }
 
 .CopyRights
@@ -398,8 +396,6 @@ export default {
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
   z-index: 2;
-  margin-top: 100px;
-  margin-left: 100px;
 }
 
 .buttons {
@@ -408,6 +404,7 @@ export default {
   margin-left: -800px;
 }
 
+/*ok */
 .buttonFindPartners {
   margin: 0 10px; /* Adjust the spacing between buttons as needed */
   padding: 15px 50px;
@@ -420,6 +417,7 @@ export default {
   z-index: 2;
 }
 
+/*ok */
 .buttonJoinNow {
   margin: 0 10px; /* Adjust the spacing between buttons as needed */
   padding: 15px 50px;
@@ -432,6 +430,7 @@ export default {
   z-index: 2;
 }
 
+/*ok */
 .buttonSignUp {
   margin: 0 10px; /* Adjust the spacing between buttons as needed */
   padding: 15px 50px;
@@ -440,9 +439,14 @@ export default {
   border: none;
   cursor: pointer;
   border-radius: 50px 50px 50px 50px;
-  margin-top: 30px;
-  margin-left: 400px;
+  margin-top: 40px;
   z-index: 2;
+  margin: 0;
+  position: relative;
+  margin: 10%;
+  left: 40%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .buttonPlansGetStarted,
@@ -454,9 +458,11 @@ export default {
   border: none;
   cursor: pointer;
   border-radius: 10px 10px 10px 10px;
-  margin-top: 50px;
-  margin-left: 200px;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .buttonSubscribe{
@@ -467,8 +473,6 @@ export default {
   border: none;
   cursor: pointer;
   border-radius: 10px 10px 10px 10px;
-  margin-top: 50px;
-  margin-left: 20px;
   z-index: 2;
 }
 
