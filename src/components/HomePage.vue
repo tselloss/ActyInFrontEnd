@@ -1,86 +1,95 @@
 <!-- eslint-disable max-len -->
 <template>
-  <div class="home">
-   <div class="left-placeholder"></div>
-    <h1 class="title" >ACTYIN</h1>
-    <div class="right-placeholder"></div>
+  <div>
     <div class="home">
-      <button class="buttonFindPartners">Find Partners</button>
-      <button class="buttonJoinNow">Join Now</button>
-  </div>
-  </div>
-  <div class="home">
-  <div class="getStarted">
-    <h1 class="titleGetStarted">Get Started</h1>
-    <p class="GetStartedContext1">Discover countless activities near you<br>and match with compatible partners who share your interests.!
-    <br>Don’t just sit there, get active with ActyIn!</p>
-    <button class="buttonSignUp">Sign Up Now</button>
-  </div>
-  </div>
-  <div class="findbuddiesBlock">
-  <div class="findBuddies">
-    <h1 class="titlefindYourActivityBuddies">Find Your Activity Buddies</h1>
-    <p class="findYourActivityBuddiesContext1">No more searching through countless<br> forums and
-    groups for the<br> perfect match. Our intelligent
-    <br>algorithm helps you find like-minded<br> individuals to
-    join you on<br> your next adventure!
-    </p>
-  </div>
-  <div class="right-placeholderFindyourBuddiesPhoto"></div>
-  </div>
-   <div class="organizeActivitiesBlock">
-    <div class="left-placeholderFindyourBuddiesPhoto"></div>
-   <div class="organizeActivities">
-    <h1 class="titleOrganizeActivities">Organize Activities <br> Effortlessly</h1>
-    <p class="OrganizeActivitiesContext1">Whether it’s weekend hikes, tennis matches, or
-    <br>group yoga sessions, ActyIn makes it easy to
-    <br>coordinate activities with your new-found friends.</p>
-   </div>
-  </div>
-   <div class="home">
-    <div class="left-placeholderFeePlan">
-    <h1 class="titleFreePlan">Free Plan</h1>
-    <h1 class="planPrice">$0/mo<p></p></h1>
-    <h1 class="planInfo">Basic Matching
-<p></p>
-Limited Activities
-<p></p>
-Email Support<p></p></h1>
-<button class="buttonPlansGetStarted">Get Started</button>
+      <div class="left-placeholder"></div>
+      <h1 class="title">ACTYIN</h1>
+      <div class="right-placeholder"></div>
+      <div class="home">
+        <button class="buttonFindPartners">Find Partners</button>
+        <button class="buttonJoinNow">Join Now</button>
+      </div>
     </div>
-    <div class="right-placeholderPremiumPlan">
-    <h1 class="titlePremiumPlan">Premium Plan<p></p></h1>
-    <h1 class="planPrice">$9.99/mo<p></p></h1>
-    <h1 class="planInfo">Advanced Matching
-<p></p>
-Unlimited Activities
-<p></p>
-Priority Support<p></p></h1>
-<button class="buttonUpgrade">Upgrade Now</button>
+
+      <div class="getStarted">
+        <h1 class="titleGetStarted">Get Started</h1>
+        <p class="GetStartedContext1">
+          Discover countless activities near you<br />
+          and match with compatible partners who share your interests.! <br />
+          Don’t just sit there, get active with ActyIn!
+        </p>
+        <button class="buttonSignUp">Sign Up Now</button>
+      </div>
+
+    <div class="findbuddiesBlock">
+      <div class="findBuddies">
+        <h1 class="titlefindYourActivityBuddies">Find Your Activity Buddies</h1>
+        <p class="findYourActivityBuddiesContext1">
+          No more searching through countless<br /> forums and groups for the<br />
+          perfect match. Our intelligent<br />algorithm helps you find like-minded<br />
+          individuals to join you on<br /> your next adventure!
+        </p>
+      </div>
+      <div class="right-placeholderFindyourBuddiesPhoto"></div>
     </div>
+
+    <div class="organizeActivitiesBlock">
+      <div class="left-placeholderFindyourBuddiesPhoto"></div>
+      <div class="organizeActivities">
+        <h1 class="titleOrganizeActivities">Organize Activities <br /> Effortlessly</h1>
+        <p class="OrganizeActivitiesContext1">
+          Whether it’s weekend hikes, tennis matches, or <br />
+          group yoga sessions, ActyIn makes it easy to <br />
+          coordinate activities with your new-found friends.
+        </p>
+      </div>
     </div>
+
+    <div class="planContainer">
+      <div class="left-placeholderFeePlan">
+      <div><h1 class="titleFreePlan">Free Plan</h1></div>
+        <h1 class="planPriceFree">$0/mo<p></p></h1>
+        <h1 class="planInfo">Basic Matching<br />Activities<br />Email Support</h1>
+        <button class="buttonPlansGetStarted">Get Started</button>
+      </div>
+
+      <div class="right-placeholderPremiumPlan">
+        <h1 class="titlePremiumPlan">Premium Plan<p></p></h1>
+        <h1 class="planPrice">$9.99/mo<p></p></h1>
+        <h1 class="planInfo">Advanced Matching <br /> Unlimited Activities <br /> Priority Support<br /></h1>
+        <button class="buttonUpgrade">Upgrade Now</button>
+      </div>
+    </div>
+
     <div class="home">
-    <h1 class="titleQuestions">Frequently Asked Questions</h1>
-    <h1 class="QuestionsContext1">How does the matching process work?</h1>
-    <p class="QuestionsContext3">Our intelligent algorithm analyzes your selected
-    <br>interests, location, and preferred time to find
-    <br>potential activity partners. It then provides you with
-    <br>a list of compatible matches to choose from.</p>
-    <h1 class="QuestionsContext2">Is my personal information safe?</h1>
-    <p class="QuestionsContext4">At ActyIn, we take your privacy very seriously. Your
-    <br>personal information is securely stored and never
-    <br>shared with any third parties without your consent.</p>
-  </div>
-  <div class="home">
-    <h1 class="titleStayTuned">Stay Updated</h1>
-    <h1 class="StayTunedContext1">Be the first to know about new features,special offers</h1>
-    <h1 class="StayTunedContext3">and upcoming events. Subscribe to our newsletter now and </h1>
-    <h1 class="StayTunedContext3">never miss out on all the ActyIn fun!</h1>
-    <input type="email" placeholder="name@email.com" class="email-input" />
-    <button class="buttonSubscribe">Subscribe</button>
-  </div>
-  <div class="home">
-    <h1 class="CopyRights">© ActyIn 2023. All rights reserved.</h1>
+      <h1 class="titleQuestions">Frequently Asked Questions</h1>
+      <h1 class="QuestionsContext1">How does the matching process work?</h1>
+      <p class="QuestionsContext3">
+        Our intelligent algorithm analyzes your selected<br />
+        interests, location, and preferred time to find<br />
+        potential activity partners. It then provides you with<br />
+        a list of compatible matches to choose from.
+      </p>
+      <h1 class="QuestionsContext2">Is my personal information safe?</h1>
+      <p class="QuestionsContext4">
+        At ActyIn, we take your privacy very seriously. Your<br />
+        personal information is securely stored and never<br />
+        shared with any third parties without your consent.
+      </p>
+    </div>
+
+    <div class="home">
+      <h1 class="titleStayTuned">Stay Updated</h1>
+      <h1 class="StayTunedContext1">Be the first to know about new features,special offers</h1>
+      <h1 class="StayTunedContext3">and upcoming events. Subscribe to our newsletter now and </h1>
+      <h1 class="StayTunedContext3">never miss out on all the ActyIn fun!</h1>
+      <input type="email" placeholder="name@email.com" class="email-input" />
+      <button class="buttonSubscribe">Subscribe</button>
+    </div>
+
+    <div class="home">
+      <h1 class="CopyRights">© ActyIn 2023. All rights reserved.</h1>
+    </div>
   </div>
 </template>
 
@@ -95,6 +104,22 @@ export default {
 
 <style scoped>
 
+@media only screen and (max-width: 768px) {
+  .home,
+  .findbuddiesBlock,
+  .organizeActivitiesBlock {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .right-placeholderPremiumPlan,
+  .left-placeholderFeePlan {
+    height: auto;
+    flex-direction: column;
+  }
+}
+
 /*ok */
 .home {
   position: relative;
@@ -108,31 +133,44 @@ export default {
   overflow: hidden;
 }
 
+.planContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 80vh;
+  background-color: #000;
+  color: #0077cc;
+  font-family: 'Limelight', sans-serif;
+  overflow: hidden;
+  padding: 20px;
+}
+
 /*ok */
 .findbuddiesBlock {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 80vh;
   background-color: #000;
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
-  margin-top: -30%;
+  margin-top: -10%;
 }
 
+/*ok */
 .organizeActivitiesBlock {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 80vh;
   background-color: #000;
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
-  margin-top: -30%;
+  margin-top: -10%;
 }
 
 /*ok */
@@ -169,12 +207,12 @@ export default {
   display: block;
   align-items: center;
   justify-content: center;
-  height: 30vh;
+  height: 50vh;
   background-color: #000;
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
-  margin-top: 0px;
+  margin-top: 50px;
 }
 
 /*ok */
@@ -206,14 +244,18 @@ export default {
 
 .right-placeholderPremiumPlan {
   width: 300px;
-  height: 400px;
+  height: 320px;
   position: absolute;
   background-color: #131313;
   border-radius: 20px 20px 20px 20px;
   right: 12%;
   z-index: 1;
+  flex: 1;
+  padding: 10px;
+  text-align: left;
 }
 
+/*ok */
 .left-placeholderFindyourBuddiesPhoto {
   width: 400px;
   height: 350px;
@@ -225,18 +267,21 @@ export default {
   flex-direction: column;
   align-items: left;
   justify-content: left;
-  margin-right: 5%;
+  margin-right: 15%;
   margin-left: 10%;
 }
 
 .left-placeholderFeePlan {
   width: 300px;
-  height: 400px;
+  height: 320px;
   position: absolute;
   background-color: #131313;
   border-radius: 20px 20px 20px 20px;
   left: 12%;
   z-index: 1;
+  flex: 1;
+  padding: 10px;
+  text-align: left;
 }
 
 /*ok */
@@ -321,53 +366,90 @@ export default {
   z-index: 2;
   position: relative;
   display: flex;
-  flex-direction: right;
-  align-items: center;
-  justify-content: center;
-  margin-top: 65%;
+  flex-direction: left;
+  align-items: left;
+  justify-content: left;
+  margin-top: 50%;
 }
-
+/*ok */
 .titleFreePlan {
-  font-size: 28px;
+  font-size: 20px;
   margin: 0;
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
   z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: right;
+  align-items: left;
+  justify-content: left;
 }
-
+/*ok */
 .titlePremiumPlan {
-  font-size: 28px;
+  font-size: 20px;
   margin: 0;
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
-  z-index: 1;
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: right;
+  align-items: left;
+  justify-content: left;
 }
-
+/*ok */
 .planPrice {
-  font-size: 48px;
+  font-size: 40px;
   margin: 0;
   color: #457B9D;
   font-family: 'Limelight', sans-serif;
   z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: right;
+  align-items: left;
+  justify-content: left;
+}
+/*ok */
+.planPriceFree {
+  font-size: 40px;
+  margin: 0;
+  color: #457B9D;
+  font-family: 'Limelight', sans-serif;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: right;
+  align-items: left;
+  justify-content: left;
+  margin-top: 5%;
 }
 
+/*ok */
 .planInfo {
   font-size: 20px;
   margin: 0;
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
   z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: right;
+  align-items: left;
+  justify-content: left;
+  margin-top: 7%;
 }
 
+/*ok */
 .OrganizeActivitiesContext1 {
-  font-size: 18px;
+  font-size: 25px;
   margin: 0;
   color: #457B9D;
   font-family: 'Roboto', sans-serif;
   z-index: 2;
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: left;
   align-items: left;
   justify-content: left;
   font-weight: 400;
@@ -465,6 +547,11 @@ export default {
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
   z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: left;
+  align-items: left;
+  justify-content: left;
 }
 
 .buttons {
@@ -512,12 +599,12 @@ export default {
   z-index: 2;
   margin: 0;
   position: relative;
-  margin: 10%;
-  left: 40%;
+  margin: 5%;
+  left: 45%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
+/*ok */
 .buttonPlansGetStarted,
 .buttonUpgrade{
   margin: 0 10px; /* Adjust the spacing between buttons as needed */
@@ -532,6 +619,8 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 15%;
+  margin-left: 15%;
 }
 
 .buttonSubscribe{
