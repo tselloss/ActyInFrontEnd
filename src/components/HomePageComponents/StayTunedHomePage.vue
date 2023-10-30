@@ -43,7 +43,7 @@ export default {
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
-  margin-top: -12%;
+  margin-top: -10%;
 }
 
 .titleStayTuned{
@@ -53,7 +53,7 @@ export default {
   font-family: 'Limelight', sans-serif;
   z-index: 2;
   position: relative;
-  margin-top: -20%;
+  margin-top: -15%;
 }
 
 .StayTunedContext1 {

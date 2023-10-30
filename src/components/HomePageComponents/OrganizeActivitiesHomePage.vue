@@ -29,10 +29,16 @@ export default {
 <style scoped>
 
 @media only screen and (max-width: 768px) {
-  .organizeActivitiesBlock
-  {
+  .organizeActivitiesBlock {
     height: auto;
     flex-direction: column;
+    align-items: center; /* Center content vertically on smaller screens */
+  }
+
+  .left-placeholderOrganizeActivitiesPhoto {
+    width: 50%; /* Adjust the width as needed */
+    height: 30vh; /* Adjust the height as needed */
+    margin-top: 0; /* Adjust the margin-top as needed */
   }
 }
 
@@ -47,7 +53,6 @@ export default {
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
-  margin-top: -10%;
 }
 
 /*ok */
@@ -67,7 +72,7 @@ export default {
 /*ok */
 .left-placeholderOrganizeActivitiesPhoto {
   width: 30%;
-  height: 40%;
+  height: 40vh;
   background-color: #333;
   border-radius: 150px 70px 70px 70px;
   z-index: 1;
