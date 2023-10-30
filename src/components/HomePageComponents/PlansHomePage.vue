@@ -1,21 +1,35 @@
 <!-- eslint-disable max-len -->
 <template>
-<div class="PlansHomePage">
+  <div class="PlansHomePage">
     <div class="planContainer">
-      <div class="left-placeholderFeePlan">
-      <div><h1 class="titleFreePlan">Free Plan</h1></div>
-        <h1 class="planPriceFree">$0/mo<p></p></h1>
-        <h1 class="planInfo">Basic Matching<br />Activities<br />Email Support</h1>
+      <div class="home">
+      <div class="planBlock left-placeholderFeePlan">
+        <div>
+          <h1 class="titleFreePlan">Free Plan</h1>
+        </div>
+        <h1 class="planPriceFree">$0/mo</h1>
+        <h1 class="planInfo">
+          Basic Matching<br />
+          Activities<br />
+          Email Support
+        </h1>
         <button class="buttonPlansGetStarted">Get Started</button>
       </div>
-      <div class="right-placeholderPremiumPlan">
-        <h1 class="titlePremiumPlan">Premium Plan<p></p></h1>
-        <h1 class="planPrice">$9.99/mo<p></p></h1>
-        <h1 class="planInfo">Advanced Matching <br /> Unlimited Activities <br /> Priority Support<br /></h1>
+
+      <!-- Premium Plan -->
+      <div class="planBlock right-placeholderPremiumPlan">
+        <h1 class="titlePremiumPlan">Premium Plan</h1>
+        <h1 class="planPrice">$9.99/mo</h1>
+        <h1 class="planInfo">
+          Advanced Matching <br />
+          Unlimited Activities <br />
+          Priority Support<br />
+        </h1>
         <button class="buttonUpgrade">Upgrade Now</button>
       </div>
       </div>
-      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -29,10 +43,10 @@ export default {
 
 <style scoped>
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 920px) {
   .planContainer {
-    height: auto;
-    flex-direction: column;
+    width: 100%; /* Take full width on smaller screens */
+    margin-bottom: 20px; /* Adjust spacing between the blocks */
   }
 }
 
@@ -46,7 +60,7 @@ export default {
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
-  margin-top: -10%;
+  margin-top: -25%;
 }
 
 .right-placeholderPremiumPlan {

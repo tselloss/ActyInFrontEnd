@@ -54,5 +54,6 @@ export default {
   flex-direction: left;
   align-items: left;
   justify-content: left;
+  margin-left: 10%;
 }
 </style>

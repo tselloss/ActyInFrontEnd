@@ -84,4 +84,27 @@ export default {
   z-index: 2;
 }
 
+.buttonFindPartners {
+  margin: 0 10px; /* Adjust the spacing between buttons as needed */
+  padding: 15px 50px;
+  background-color: #1D3557;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px 50px 50px 50px;
+  margin-top: 30%;
+  z-index: 2;
+}
+
+.buttonJoinNow {
+  margin: 0 10px; /* Adjust the spacing between buttons as needed */
+  padding: 15px 50px;
+  background-color: #0ab3dd;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px 50px 50px 50px;
+  margin-top: 30%;
+  z-index: 2;
+}
 </style>

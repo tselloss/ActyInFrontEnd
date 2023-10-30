@@ -52,11 +52,12 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 110vh;
   background-color: #000;
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
+  margin-top: -33%;
 }
 
 .titleQuestions {

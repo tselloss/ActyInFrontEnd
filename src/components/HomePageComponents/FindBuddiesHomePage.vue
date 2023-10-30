@@ -28,7 +28,7 @@ export default {
 
 <style scoped>
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 790px) {
   .home,
   .findbuddiesBlock,
   .organizeActivitiesBlock,
@@ -44,12 +44,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 100vh;
   background-color: #000;
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
-  margin-top: -10%;
+  margin-top: -25%;
 }
 
 /*ok */

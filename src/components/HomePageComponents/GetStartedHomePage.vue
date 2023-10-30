@@ -44,12 +44,12 @@ export default {
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
-  margin-top: 0px;
+  margin-top: 10%;
 }
 
 /*ok */
 .titleGetStarted {
-  font-size: 3em;
+  font-size: 2.5em;
   margin: 0;
   color: #457B9D;
   font-family: 'Limelight', sans-serif;
@@ -62,7 +62,7 @@ export default {
 }
 
 .GetStartedContext1 {
-  font-size: 30px;
+  font-size: 22px;
   margin: 0;
   color: #457B9D;
   font-family: 'Roboto', sans-serif;
