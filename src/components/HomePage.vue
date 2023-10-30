@@ -52,15 +52,13 @@
         <h1 class="planInfo">Basic Matching<br />Activities<br />Email Support</h1>
         <button class="buttonPlansGetStarted">Get Started</button>
       </div>
-
       <div class="right-placeholderPremiumPlan">
         <h1 class="titlePremiumPlan">Premium Plan<p></p></h1>
         <h1 class="planPrice">$9.99/mo<p></p></h1>
         <h1 class="planInfo">Advanced Matching <br /> Unlimited Activities <br /> Priority Support<br /></h1>
         <button class="buttonUpgrade">Upgrade Now</button>
       </div>
-    </div>
-
+      </div>
     <div class="home">
       <h1 class="titleQuestions">Frequently Asked Questions</h1>
       <h1 class="QuestionsContext1">How does the matching process work?</h1>
@@ -107,14 +105,8 @@ export default {
 @media only screen and (max-width: 768px) {
   .home,
   .findbuddiesBlock,
-  .organizeActivitiesBlock {
-    height: auto;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .right-placeholderPremiumPlan,
-  .left-placeholderFeePlan {
+  .organizeActivitiesBlock,
+  .planContainer {
     height: auto;
     flex-direction: column;
   }
@@ -136,13 +128,14 @@ export default {
 .planContainer {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   height: 80vh;
   background-color: #000;
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
-  padding: 20px;
+  margin-top: -10%;
 }
 
 /*ok */
