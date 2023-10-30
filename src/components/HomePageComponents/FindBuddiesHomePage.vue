@@ -63,13 +63,13 @@ export default {
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
 /*ok */
 .right-placeholderFindyourBuddiesPhoto {
-  width: 400px;
-  height: 400px;
+  width: 40%;
+  height: 30%;
   background-color: #333;
   border-radius: 70px 70px 70px 70px;
   z-index: 1;
@@ -79,18 +79,7 @@ export default {
   align-items: right;
   justify-content: right;
   margin-left: 10%;
-}
-
-/*ok */
-.left-placeholder {
-  width: 300px;
-  height: 500px;
-  position: absolute;
-  background-color: #333;
-  border-radius: 20px 20px 20px 20px;
-  transform: rotate(-18deg);
-  left: 12%;
-  z-index: 1;
+  margin-top: -3%;
 }
 
 .titlefindYourActivityBuddies {
@@ -106,7 +95,6 @@ export default {
   justify-content: left;
 }
 
-/*ok */
 .findYourActivityBuddiesContext1 {
   font-size: 25px;
   margin: 0;

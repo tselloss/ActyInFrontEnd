@@ -52,12 +52,12 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 110vh;
+  height: 100vh;
   background-color: #000;
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
-  margin-top: -33%;
+  margin-top: -20%;
 }
 
 .titleQuestions {
@@ -72,7 +72,7 @@ export default {
 .questionBlock {
   display: flex;
   flex-direction: row;
-  margin-top: 10px; /* Adjust the spacing as needed */
+  margin-top: 20px; /* Adjust the spacing as needed */
 }
 
 .leftBlock,

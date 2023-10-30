@@ -61,22 +61,7 @@ export default {
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
-  margin-top: 0px;
-}
-
-/*ok */
-.right-placeholderOrganizeActivitiesPhoto {
-  width: 400px;
-  height: 400px;
-  background-color: #333;
-  border-radius: 70px 70px 70px 70px;
-  z-index: 1;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: right;
-  justify-content: right;
-  margin-left: 10%;
+  margin-top: 30px;
 }
 
 /*ok */

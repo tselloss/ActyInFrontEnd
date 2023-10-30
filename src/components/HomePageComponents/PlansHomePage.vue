@@ -2,7 +2,6 @@
 <template>
   <div class="PlansHomePage">
     <div class="planContainer">
-      <div class="home">
       <div class="planBlock left-placeholderFeePlan">
         <div>
           <h1 class="titleFreePlan">Free Plan</h1>
@@ -27,7 +26,6 @@
         </h1>
         <button class="buttonUpgrade">Upgrade Now</button>
       </div>
-      </div>
     </div>
   </div>
 </template>
@@ -43,43 +41,59 @@ export default {
 
 <style scoped>
 
-@media only screen and (max-width: 920px) {
+@media only screen and (max-width: 770px) {
   .planContainer {
-    width: 100%; /* Take full width on smaller screens */
-    margin-bottom: 20px; /* Adjust spacing between the blocks */
+    flex-direction: column; /* Stack items vertically on smaller screens */
   }
 }
 
 .planContainer {
+  display: flex;
+  justify-content: space-around;
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
-  background-color: #000;
-  color: #0077cc;
-  font-family: 'Limelight', sans-serif;
-  overflow: hidden;
-  margin-top: -25%;
+  flex-direction: center;
+  align-items: left;
+  justify-content: left;
 }
 
-.right-placeholderPremiumPlan {
-  width: 300px;
-  height: 320px;
-  position: absolute;
+.planBlock {
+  width: 250px; /* Adjust the width as needed */
+  height: 300px; /* Adjust the height as needed */
   background-color: #131313;
-  border-radius: 20px 20px 20px 20px;
-  right: 12%;
-  z-index: 1;
+  border-radius: 20px;
   flex: 1;
   padding: 10px;
   text-align: left;
+  margin-top: 10%;
+  display: block;
+  flex-direction: left;
+  align-items: left;
+  justify-content: left;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.right-placeholderPremiumPlan {
+  width: 250px;
+  height: 300px;
+  background-color: #131313;
+  border-radius: 20px 20px 20px 20px;
+  right: 12%;
+  z-index: 2;
+  flex: 1;
+  padding: 10px;
+  text-align: left;
+  margin-top: 10%;
+  display: block;
+  flex-direction: left;
+  align-items: left;
+  justify-content: left;
 }
 
 .left-placeholderFeePlan {
-  width: 300px;
-  height: 320px;
-  position: absolute;
+  width: 250px;
+  height: 300px;
   background-color: #131313;
   border-radius: 20px 20px 20px 20px;
   left: 12%;
@@ -87,8 +101,11 @@ export default {
   flex: 1;
   padding: 10px;
   text-align: left;
+  display: block;
+  flex-direction: left;
+  align-items: left;
+  justify-content: left;
 }
-
 /*ok */
 .titleFreePlan {
   font-size: 20px;
@@ -127,6 +144,7 @@ export default {
   flex-direction: right;
   align-items: left;
   justify-content: left;
+  margin-top: 5%;
 }
 /*ok */
 .planPriceFree {
@@ -173,7 +191,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 15%;
+  margin-top: 15px;
   margin-left: 15%;
 }
 
