@@ -57,7 +57,7 @@ export default {
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
-  margin-top: -20%;
+  margin-top: 10%;
 }
 
 .titleQuestions {

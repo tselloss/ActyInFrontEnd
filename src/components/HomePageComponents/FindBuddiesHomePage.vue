@@ -78,8 +78,8 @@ export default {
   flex-direction: column;
   align-items: right;
   justify-content: right;
-  margin-left: 10%;
-  margin-top: -3%;
+  margin-left: 1%;
+  margin-top: 10%;
 }
 
 .titlefindYourActivityBuddies {

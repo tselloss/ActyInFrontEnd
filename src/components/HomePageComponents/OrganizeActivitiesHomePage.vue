@@ -61,13 +61,13 @@ export default {
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
-  margin-top: 30px;
+  margin-top: 0px;
 }
 
 /*ok */
 .left-placeholderOrganizeActivitiesPhoto {
-  width: 400px;
-  height: 350px;
+  width: 30%;
+  height: 40%;
   background-color: #333;
   border-radius: 150px 70px 70px 70px;
   z-index: 1;
@@ -76,8 +76,7 @@ export default {
   flex-direction: column;
   align-items: left;
   justify-content: left;
-  margin-right: 15%;
-  margin-left: 10%;
+  margin-top: 10%;
 }
 
 .titleOrganizeActivities {
@@ -91,7 +90,7 @@ export default {
   flex-direction: left;
   align-items: left;
   justify-content: left;
-  margin-top: 50%;
+  margin-top: 5%;
 }
 
 /*ok */
