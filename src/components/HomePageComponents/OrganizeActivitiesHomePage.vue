@@ -28,24 +28,23 @@ export default {
 
 <style scoped>
 
-@media only screen and (max-width: 768px) {
-  .organizeActivitiesBlock {
-    height: auto;
-    flex-direction: column;
-    align-items: center; /* Center content vertically on smaller screens */
-  }
-
-  .left-placeholderOrganizeActivitiesPhoto {
-    width: 50%; /* Adjust the width as needed */
-    height: 30vh; /* Adjust the height as needed */
-    margin-top: 0; /* Adjust the margin-top as needed */
-  }
-}
-
 /*ok */
 .organizeActivitiesBlock {
   position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  background-color: #000;
+  color: #0077cc;
+  font-family: 'Limelight', sans-serif;
+  overflow: hidden;
+}
+
+/*ok */
+.organizeActivitiesBlock1 {
+  position: relative;
+  display: block;
   align-items: center;
   justify-content: center;
   height: 80vh;
@@ -66,12 +65,13 @@ export default {
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
-  margin-top: 0px;
+  margin-top: 25%;
+  margin-left: 10%;
 }
 
 /*ok */
 .left-placeholderOrganizeActivitiesPhoto {
-  width: 30%;
+  width: 40vh;
   height: 40vh;
   background-color: #333;
   border-radius: 150px 70px 70px 70px;
@@ -81,7 +81,6 @@ export default {
   flex-direction: column;
   align-items: left;
   justify-content: left;
-  margin-top: 10%;
 }
 
 .titleOrganizeActivities {
@@ -95,7 +94,7 @@ export default {
   flex-direction: left;
   align-items: left;
   justify-content: left;
-  margin-top: 5%;
+  margin-top: 20%;
 }
 
 /*ok */
@@ -111,6 +110,50 @@ export default {
   align-items: left;
   justify-content: left;
   font-weight: 400;
+}
+
+@media (min-width: 1024px) {
+  .OrganizeActivitiesHomePage {
+    margin-top: 0;
+    padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
+  }
+
+  i {
+    top: calc(50% - 25px);
+    left: -26px;
+    position: absolute;
+    border: 1px solid var(--color-border);
+    background: var(--color-background);
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .OrganizeActivitiesHomePage:before {
+    content: ' ';
+    border-left: 1px solid var(--color-border);
+    position: flex;
+    left: 0;
+    bottom: calc(50% + 25px);
+    height: calc(50% - 25px);
+  }
+
+  .OrganizeActivitiesHomePage:after {
+    content: ' ';
+    border-left: 1px solid var(--color-border);
+    position: flex;
+    left: 0;
+    top: calc(50% + 25px);
+    height: calc(50% - 25px);
+  }
+
+  .OrganizeActivitiesHomePage:first-of-type:before {
+    display: none;
+  }
+
+  .OrganizeActivitiesHomePage:last-of-type:after {
+    display: none;
+  }
 }
 
 </style>

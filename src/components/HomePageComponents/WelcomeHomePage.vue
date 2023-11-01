@@ -107,4 +107,48 @@ export default {
   margin-top: 30%;
   z-index: 2;
 }
+
+@media (min-width: 1024px) {
+  .home {
+    margin-top: 0;
+    padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
+  }
+
+  i {
+    top: calc(50% - 25px);
+    left: -26px;
+    position: absolute;
+    border: 1px solid var(--color-border);
+    background: var(--color-background);
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .home:before {
+    content: ' ';
+    border-left: 1px solid var(--color-border);
+    position: flex;
+    left: 0;
+    bottom: calc(50% + 25px);
+    height: calc(50% - 25px);
+  }
+
+  .home:after {
+    content: ' ';
+    border-left: 1px solid var(--color-border);
+    position: flex;
+    left: 0;
+    top: calc(50% + 25px);
+    height: calc(50% - 25px);
+  }
+
+  .home:first-of-type:before {
+    display: none;
+  }
+
+  .home:last-of-type:after {
+    display: none;
+  }
+}
 </style>

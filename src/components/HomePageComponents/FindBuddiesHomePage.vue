@@ -44,7 +44,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 80vh;
   background-color: #000;
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
@@ -78,8 +78,7 @@ export default {
   flex-direction: column;
   align-items: right;
   justify-content: right;
-  margin-left: 1%;
-  margin-top: 10%;
+  margin-left: 10%;
 }
 
 .titlefindYourActivityBuddies {
@@ -107,5 +106,49 @@ export default {
   align-items: left;
   justify-content: left;
   font-weight: 400;
+}
+
+@media (min-width: 1024px) {
+  .FindBuddiesHomePage {
+    margin-top: 0;
+    padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
+  }
+
+  i {
+    top: calc(50% - 25px);
+    left: -26px;
+    position: absolute;
+    border: 1px solid var(--color-border);
+    background: var(--color-background);
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .FindBuddiesHomePage:before {
+    content: ' ';
+    border-left: 1px solid var(--color-border);
+    position: absolute;
+    left: 0;
+    bottom: calc(50% + 25px);
+    height: calc(50% - 25px);
+  }
+
+  .FindBuddiesHomePage:after {
+    content: ' ';
+    border-left: 1px solid var(--color-border);
+    position: absolute;
+    left: 0;
+    top: calc(50% + 25px);
+    height: calc(50% - 25px);
+  }
+
+  .FindBuddiesHomePage:first-of-type:before {
+    display: none;
+  }
+
+  .FindBuddiesHomePage:last-of-type:after {
+    display: none;
+  }
 }
 </style>

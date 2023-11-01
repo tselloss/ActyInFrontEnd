@@ -26,13 +26,6 @@ export default {
 
 <style scoped>
 
-@media only screen and (max-width: 768px) {
-  .getStarted {
-    height: auto;
-    flex-direction: column;
-  }
-}
-
 /*ok */
 .getStarted {
   position: relative;
@@ -74,13 +67,6 @@ export default {
   justify-content: center;
   font-weight: 400;
 }
-
-.buttons {
-  display: flex;
-  margin-top: 300px;
-  margin-left: -800px;
-}
-
 /*ok */
 .buttonSignUp {
   margin: 0 10px; /* Adjust the spacing between buttons as needed */
@@ -90,7 +76,7 @@ export default {
   border: none;
   cursor: pointer;
   border-radius: 50px 50px 50px 50px;
-  margin-top: 40px;
+  margin-top: 100px;
   z-index: 2;
   margin: 0;
   position: relative;
@@ -98,5 +84,49 @@ export default {
   left: 45%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+@media (min-width: 1024px) {
+  .getStarted {
+    margin-top: 0;
+    padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
+  }
+
+  i {
+    top: calc(50% - 25px);
+    left: -26px;
+    position: absolute;
+    border: 1px solid var(--color-border);
+    background: var(--color-background);
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .getStarted:before {
+    content: ' ';
+    border-left: 1px solid var(--color-border);
+    position: absolute;
+    left: 0;
+    bottom: calc(50% + 25px);
+    height: calc(50% - 25px);
+  }
+
+  .getStarted:after {
+    content: ' ';
+    border-left: 1px solid var(--color-border);
+    position: absolute;
+    left: 0;
+    top: calc(50% + 25px);
+    height: calc(50% - 25px);
+  }
+
+  .getStarted:first-of-type:before {
+    display: none;
+  }
+
+  .getStarted:last-of-type:after {
+    display: none;
+  }
 }
 </style>
