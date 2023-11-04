@@ -1,7 +1,12 @@
+<script setup>
+import LoginItem from '../components/LoginItem.vue'
+</script>
+
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <main>
+    <TheWelcome />
+    <LoginItem />
+  </main>
 </template>
 
 <style>
