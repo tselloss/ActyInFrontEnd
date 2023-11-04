@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div class="findbuddiesBlock">
       <div class="findbuddiesBlock">
         <div class="findBuddies">
           <h1 class="titlefindYourActivityBuddies">Find Your Activity Buddies</h1>
@@ -12,7 +11,6 @@
         </div>
         <div class="right-placeholderFindyourBuddiesPhoto"></div>
       </div>
-    </div>
   </div>
 </template>
 
@@ -90,7 +88,7 @@
 }
 
 @media (min-width: 1024px) {
-  .FindBuddiesHomePage {
+  .findbuddiesBlock {
     margin-top: -10%;
     padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
   }
@@ -106,7 +104,7 @@
     height: 50px;
   }
 
-  .FindBuddiesHomePage:before {
+  .findbuddiesBlock:before {
     content: ' ';
     border-left: 1px solid var(--color-border);
     position: absolute;
@@ -115,7 +113,7 @@
     height: calc(50% - 25px);
   }
 
-  .FindBuddiesHomePage:after {
+  .findbuddiesBlock:after {
     content: ' ';
     border-left: 1px solid var(--color-border);
     position: absolute;
@@ -124,11 +122,11 @@
     height: calc(50% - 25px);
   }
 
-  .FindBuddiesHomePage:first-of-type:before {
+  .findbuddiesBlock:first-of-type:before {
     display: none;
   }
 
-  .FindBuddiesHomePage:last-of-type:after {
+  .findbuddiesBlock:last-of-type:after {
     display: none;
   }
 }

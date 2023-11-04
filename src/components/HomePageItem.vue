@@ -1,5 +1,4 @@
 <template>
-    <div class="WelcomeHomePage">
         <div class="home">
              <div class="left-placeholder"></div>
              <h1 class="title">ACTYIN</h1>
@@ -9,28 +8,16 @@
                <button class="buttonJoinNow">Join Now</button>
              </div>
            </div>
-       </div>
 </template>
 
 <style scoped>
 
-.WelcomeHomePage {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 75vh;
-    background-color: #000;
-    color: #0077cc;
-    font-family: 'Limelight', sans-serif;
-    overflow: hidden;
-  }
 .home {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 75vh;
+    height: 100vh;
     background-color: #000;
     color: #0077cc;
     font-family: 'Limelight', sans-serif;
@@ -45,7 +32,7 @@
     background-color: #333;
     border-radius: 20px 20px 20px 20px;
     transform: rotate(18deg);
-    right: 12%;
+    right: 250px;
     z-index: 1;
   }
   
@@ -57,20 +44,18 @@
     background-color: #333;
     border-radius: 20px 20px 20px 20px;
     transform: rotate(-18deg);
-    left: 12%;
+    left: 250px;
     z-index: 1;
   }
   
   /*ok */
   .title {
     position: absolute;
-    font-size: 94px;
+    font-size: 500%;
     margin: 0;
     color: #457B9D;
     font-family: 'Limelight', sans-serif;
     z-index: 2;
-    top: 50%;
-    width: 100%;
     text-align: center;
     vertical-align:top;
     margin-top: -150px;

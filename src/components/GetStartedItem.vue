@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div class="GetStartedHomePage">
         <div class="getStarted">
           <h1 class="titleGetStarted">Get Started</h1>
           <p class="GetStartedContext1">
@@ -11,7 +10,6 @@
           <button class="buttonSignUp">Sign Up Now</button>
         </div>
     </div>
-  </div>
 </template>
 
 <style scoped>
@@ -81,6 +79,24 @@
   .getStarted {
     margin-top: 0;
     padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
+  }
+
+  .buttonSignUp {
+    margin: 0 10px; /* Adjust the spacing between buttons as needed */
+    padding: 15px 50px;
+    background-color: #1D3557;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px 50px 50px 50px;
+    margin-top: 120px;
+    z-index: 2;
+    margin: 0;
+    position: relative;
+    margin: 5%;
+    left: 45%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
 
   i {
