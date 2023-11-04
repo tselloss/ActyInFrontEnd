@@ -203,6 +203,7 @@
   .PlansHomePage {
     margin-top: 0;
     padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
+    height: 100vh;
   }
 
   i {
@@ -241,6 +242,43 @@
   .PlansHomePage:last-of-type:after {
     display: none;
   }
+
+  .right-placeholderPremiumPlan {
+    width: 250px;
+    height: 300px;
+    background-color: #131313;
+    border-radius: 20px 20px 20px 20px;
+    right: 12%;
+    z-index: 2;
+    flex: 1;
+    padding: 10px;
+    text-align: left;
+    margin-top: 10%;
+    display: block;
+    flex-direction: right;
+    align-items: left;
+    justify-content: left;
+    margin-left: 10%;
+
+  }
+  
+  .left-placeholderFeePlan {
+    width: 250px;
+    height: 300px;
+    background-color: #131313;
+    border-radius: 20px 20px 20px 20px;
+    left: 12%;
+    z-index: 1;
+    flex: 1;
+    padding: 10px;
+    text-align: left;
+    display: block;
+    flex-direction: left;
+    align-items: left;
+    justify-content: left;
+    margin-left: 10%;
+  }
+
 }
 
 </style>

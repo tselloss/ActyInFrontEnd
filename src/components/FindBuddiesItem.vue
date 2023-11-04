@@ -1,17 +1,21 @@
 <template>
   <div>
-      <div class="findbuddiesBlock">
-        <div class="findBuddies">
-          <h1 class="titlefindYourActivityBuddies">Find Your Activity Buddies</h1>
-          <p class="findYourActivityBuddiesContext1">
-            No more searching through countless<br /> forums and groups for the<br />
-            perfect match. Our intelligent<br />algorithm helps you find like-minded<br />
-            individuals to join you on<br /> your next adventure!
-          </p>
-        </div>
-        <div class="right-placeholderFindyourBuddiesPhoto"></div>
+    <div class="findbuddiesBlock">
+      <!-- Left Column -->
+      <div class="findBuddies">
+        <h1 class="titlefindYourActivityBuddies">Find Your Activity Buddies</h1>
+        <p class="findYourActivityBuddiesContext1">
+          No more searching through countless<br /> forums and groups for the<br />
+          perfect match. Our intelligent<br />algorithm helps you find like-minded<br />
+          individuals to join you on<br /> your next adventure!
+        </p>
       </div>
+  
+      <!-- Right Column -->
+      <div class="right-placeholderFindyourBuddiesPhoto"></div>
+    </div>
   </div>
+  
 </template>
 
 <style scoped>
@@ -41,6 +45,7 @@
   font-family: 'Limelight', sans-serif;
   overflow: hidden;
   margin-top: auto;
+  flex: 1;
 }
 
 /*ok */
@@ -87,10 +92,15 @@
   margin-top: auto;
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   .findbuddiesBlock {
+    flex-direction: column;
     margin-top: -10%;
     padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
+  }
+
+  .findBuddies {
+    order: 2;
   }
 
   i {
@@ -128,6 +138,12 @@
 
   .findbuddiesBlock:last-of-type:after {
     display: none;
+  }
+  .right-placeholderFindyourBuddiesPhoto {
+    order: 1;
+    width: 100%;
+    height: 30%;
+    margin-top: 1rem; /* Add margin as needed */
   }
 }
 </style>
