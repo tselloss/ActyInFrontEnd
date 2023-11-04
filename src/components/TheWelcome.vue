@@ -6,6 +6,7 @@ import OrganizeActivitiesItem from './OrganizeActivitiesItem.vue';
 import ThePlan from './ThePlan.vue';
 import QuestItem from './QuestItem.vue';
 import StayTunedItem from './StayTunedItem.vue';
+import CopyRightsItem from './CopyRightsItem.vue';
 </script>
 
 <template>
@@ -16,4 +17,5 @@ import StayTunedItem from './StayTunedItem.vue';
  <ThePlan />
  <QuestItem />
  <StayTunedItem/>
+ <CopyRightsItem />
 </template>
