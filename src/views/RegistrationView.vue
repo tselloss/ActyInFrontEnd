@@ -1,15 +1,15 @@
+
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+    <RegistrationForm/>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+<script>
+
+import RegistrationForm from '@/components/RegistrationForm.vue'
+export default {
+  name: 'RegistrationView',
+  components: {
+    RegistrationForm
   }
 }
-</style>
+</script>

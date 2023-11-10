@@ -1,10 +1,15 @@
-<script setup>
-import LoginItem from '../components/LoginItem.vue'
-</script>
 
 <template>
-  <main>
-    <TheWelcome />
-    <LoginItem />
-  </main>
+    <LoginForm/>
 </template>
+
+<script>
+
+import LoginForm from '@/components/LoginForm.vue'
+export default {
+  name: 'LoginView',
+  components: {
+    LoginForm
+  }
+}
+</script>
