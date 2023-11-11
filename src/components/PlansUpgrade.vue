@@ -83,6 +83,9 @@ export default {
   align-items: left;
   justify-content: left;
   background-color: #313030;
+  margin-left: 25px;
+  margin-right: 20px;
+  margin-block-end: 10px;
 }
 
 /*ok */
@@ -98,6 +101,9 @@ export default {
   align-items: left;
   justify-content: left;
   background-color: #313030;
+  margin-left: 25px;
+  margin-right: 20px;
+  margin-block-end: 10px;
 }
 
 /*ok */
@@ -113,6 +119,10 @@ export default {
   align-items: left;
   justify-content: left;
   background-color: #313030;
+  margin-left: 25px;
+  margin-right: 20px;
+  margin-block-end: 10px;
+  margin-bottom: 10px;
 }
 
 .buttonPlansGetStarted,
@@ -146,6 +156,7 @@ h1 {
   background-color: black;
   font-family: 'Limelight', sans-serif;
   padding-top: 20px;
+  padding-bottom: 15px;
 }
 h3 {
   margin: 40px 0 0;
