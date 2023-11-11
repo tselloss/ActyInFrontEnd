@@ -16,7 +16,9 @@
     </div>
 </div>
 </div>
-<ul><button class="buttonPlansGetStarted">Get Started</button></ul> 
+<router-link to="/login">
+  <ul><button class="buttonPlansGetStarted">Get Started</button></ul> 
+</router-link>
 </div>
 </template>
 

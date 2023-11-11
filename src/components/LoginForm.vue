@@ -16,7 +16,8 @@
   </div>
   
   <div class="container signin">
-    <p>Create your Account Now<a href="#">Sign Up</a>.</p>
+    <p>Create your Account Now<a href="#/register">Sign Up</a>.</p>
+    <p>Would you like to return home? <a href="#">Home</a>.</p>
   </div>
 </template>
 

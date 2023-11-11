@@ -27,7 +27,8 @@
   </div>
   
   <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
+    <p>Already have an account? <a href="#/login">Sign in</a>.</p>
+    <p>Would you like to return home? <a href="#">Home</a>.</p>
   </div>
 </template>
 
