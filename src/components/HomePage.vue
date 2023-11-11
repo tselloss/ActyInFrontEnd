@@ -1,97 +1,51 @@
 <template>
 <div class="responsive">
-
-
-
   <h1>Welcome to ACTYIN</h1>
   <div class="responsive">    
   <div class="halfpage">    
   <img src="../assets/basketball.jpg" class="responsivePhoto" width="200" height="200">
 </div> 
-<ul><button type="submit" class="registerbtn">Join Now</button></ul>
+<ul><button type="submit" class="joinButton">Join Now</button></ul>
 <ul><button type="submit" class="registerbtn">Register</button> </ul>
 </div>
-<div class="responsive">
-  <h1>Get Started</h1>
-  <ul>
-    <h3>Discover countless activities near you
-      and match with compatible partners who share your interests.!
-      Don’t just sit there, get active with ActyIn!
-    </h3>
-  </ul>
-</div>
-
-<div class="responsive">
-  <h1>Find Your Activity Buddies</h1>
-  <ul>
-    <h3>No more searching through countless forums and groups for the
-      perfect match. Our intelligent algorithm helps you find like-minded
-      individuals to join you on your next adventure!
-    </h3>
-  </ul>
-  <div class="halfpage">
-    <img src="../assets/pooltable.jpg" class="responsivePhoto" width="200" height="200">
-  </div>
-</div>
-
-
-<div class="responsive">
-  <h1>Organize Activities Effortlessly</h1>
-  <ul>
-    <h3>Whether it’s weekend hikes, tennis matches, or 
-      group yoga sessions, ActyIn makes it easy to 
-      coordinate activities with your new-found friends.
-    </h3>
-  </ul>
-  <div class="halfpage">
-    <img src="../assets/hiking.jpg" class="responsivePhoto" width="200" height="200">
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<GetStarted/>
+<FindActBuddies/>
+<OrganizeAct/>
+<Plans/>
+<PlansUpgrade/>
+<Questions/>
+<StayTuned/>
+<CopyRights/>
 </div>
 </template>
 
 <script>
+import Plans from '@/components/Plans.vue'
+import OrganizeAct from '@/components/OrganizeAct.vue'
+import GetStarted from '@/components/GetStarted.vue'
+import FindActBuddies from '@/components/FindActBuddies.vue'
+import PlansUpgrade from '@/components/PlansUpgrade.vue'
+import Questions from '@/components/Questions.vue'
+import StayTuned from '@/components/StayTuned.vue'
+import CopyRights from '@/components/CopyRights.vue'
+
 export default {
   
   name: 'HomePage',
   props: {
     msg: String
+  },
+  components: {
+    OrganizeAct,
+    Plans,
+    GetStarted,
+    FindActBuddies,
+    PlansUpgrade,
+    Questions,
+    StayTuned,
+    CopyRights
   }
 }
-
 </script>
 
 <style scoped>
@@ -116,9 +70,29 @@ export default {
   align-items: center;
   margin-left: 25%;
   z-index: 1;
+  padding-block-end: 5%;
 }
+
+.joinButton {
+  background-color: #fff;
+  color: #0ab3dd;
+  padding: 16px 20px;
+  border-radius: 50px 50px 50px 50px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+}
+
+.joinButton:hover {
+  opacity: 1;
+}
+
+
 h1 {
   margin: 0 0 0;
+  font-size: 48px;
   background-color: black;
   font-family: 'Limelight', sans-serif;
   padding-top: 20px;
