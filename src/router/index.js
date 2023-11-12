@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import RegistrationView from '../views/RegistrationView.vue'
 import UserProfileView from '../views/UserProfileView.vue'
+import MatchFormView from '../views/MatchFormView.vue'
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
     path: '/user',
     name: 'user',
     component: UserProfileView
+  },
+  {
+    path: '/match',
+    name: 'match',
+    component: MatchFormView
   }
 ]
 
