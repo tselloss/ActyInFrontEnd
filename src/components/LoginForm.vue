@@ -12,7 +12,7 @@
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw-repeat" id="psw" required>
 
-    <button type="submit" class="registerbtn">Sign In</button>
+    <button type="submit" class="registerbtn1">Sign In</button>
   </div>
   
   <div class="container signin">
@@ -70,7 +70,7 @@ hr {
 }
 
 /* Set a style for the submit button */
-.registerbtn {
+.registerbtn1 {
   background-color: #0ab3dd;
   color: #fff;
   padding: 16px 20px;
@@ -78,11 +78,11 @@ hr {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 50%;
+  width: 60%;
   opacity: 0.9;
 }
 
-.registerbtn:hover {
+.registerbtn1:hover {
   opacity: 1;
 }
 

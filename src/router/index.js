@@ -4,6 +4,7 @@ import LoginView from '../views/LoginView.vue'
 import RegistrationView from '../views/RegistrationView.vue'
 import UserProfileView from '../views/UserProfileView.vue'
 import MatchFormView from '../views/MatchFormView.vue'
+import MainPageView from '../views/MainPageView.vue' // Corrected import
 
 const routes = [
   {
@@ -14,9 +15,6 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
@@ -38,6 +36,11 @@ const routes = [
     path: '/match',
     name: 'match',
     component: MatchFormView
+  },
+  {
+    path: '/main',
+    name: 'main',
+    component: MainPageView
   }
 ]
 

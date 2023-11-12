@@ -1,17 +1,16 @@
 <template>
   <div class="container">
     <h1>Potential ActioNist</h1>
-    <li><img src="../assets/img_avatar.png" class="img" width="350" height="400"></li>
-   
+    <li><img src="../assets/img_avatar.png" class="img" width="350" height="400"></li>   
     <ul>
       <li>
-        <button type="submit" class="registerbtn">
-          <img src="../assets/thumbs_up.png" class="boximg">
+        <button type="submit" class="registerbtn3">
+          <img src="../assets/tick.png" class="boximg">
           </button>
       </li>
       <li>
-        <button type="submit" class="registerbtn">
-          <img src="../assets/thumbs_down.png" class="boximg">
+        <button type="submit" class="registerbtn3">
+          <img src="../assets/next.png" class="boximg">
           </button>
       </li>
     </ul>
@@ -21,7 +20,7 @@
 
 <script>
 export default {
-  name: 'UserProfile',
+  name: 'MatchForm',
   props: {
     msg: String
   },
@@ -90,7 +89,6 @@ img {
 
 .boximg{
   border-radius: 20%;
-  height: 100%;
   width: 100%;
 }
 /* Add padding to containers */
@@ -106,7 +104,7 @@ hr {
 }
 
 /* Set a style for the submit button */
-.registerbtn {
+.registerbtn3 {
   height: 80px;
   line-height: 80px;  
   width: 80px;  
@@ -119,7 +117,7 @@ hr {
   background-color: black;
 }
 
-.registerbtn:hover {
+.registerbtn3:hover {
   opacity: 1;
 }
 

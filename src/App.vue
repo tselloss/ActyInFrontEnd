@@ -4,7 +4,9 @@
     <router-link to="/about">About</router-link> |
     <router-link to="/login">Login</router-link> |
     <router-link to="/register">Register</router-link> |
-    <router-link to="/user">User</router-link>
+    <router-link to="/user">User</router-link>|
+    <router-link to="/match">Match Page</router-link>|
+    <router-link to="/main">Main Page</router-link>
   </nav>
   <router-view/>
 </template>
