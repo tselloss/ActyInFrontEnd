@@ -2,7 +2,7 @@
 <div class="responsive">  
   <div class="topnav">
     <a class="active" href="#home">Home</a>
-    <a href="#news">Find Partners</a>
+    <a href="#date">Select Date</a>
     <a href="#contact">Contact</a>
     <a href="#about" class="split">Help</a>
   </div>

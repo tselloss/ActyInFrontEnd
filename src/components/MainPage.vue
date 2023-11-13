@@ -1,11 +1,14 @@
 <template>
 <div class="responsive">
 <MenuBar/>
+<Calendar/>
 </div>
 </template>
 
+
 <script>
 import MenuBar from '@/components/MainPageComponents/MenuBar.vue'
+import Calendar from './MainPageComponents/Calendar.vue'
 export default {
   
   name: 'MainPage',
@@ -13,13 +16,15 @@ export default {
     msg: String
   },
   components: {
-    MenuBar
+    MenuBar,
+    Calendar
   }
 }
 
 </script>
 
 <style scoped>
+
 .responsive {
   width: 100%;
   height: auto;

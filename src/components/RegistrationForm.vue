@@ -4,33 +4,66 @@
     <hr>
 
     <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Username" name="username-repeat" id="username" required>
+    <input type="text" v-model="input.username" placeholder="Username" name="username-repeat" id="username" required>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email-repeat" id="email" required>
+    <input type="text" v-model="input.email" placeholder="Enter Email" name="email-repeat" id="email" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw-repeat" id="psw" required>
-    
+    <input type="password" v-model="input.password" placeholder="Enter Password" name="psw-repeat" id="psw" required>
 
-    <label for="Address"><b>Address</b></label>
-    <input type="text" placeholder="Enter your Address" name="address-repeat" id="address" required>
+    <label for="address"><b>Address</b></label>
+    <input type="text" v-model="input.address" placeholder="Enter your Address" name="address-repeat" id="address" required>
 
-    <label for="City"><b>City</b></label>
-    <input type="text" placeholder="Enter your City" name="city" id="city-repeat" required>
+    <label for="city"><b>City</b></label>
+    <input type="text" v-model="input.city" placeholder="Enter your City" name="city" id="city-repeat" required>
 
-    <label for="Favorite Activity"><b>Favorite Activity</b></label>
-    <input type="text" placeholder="Enter your Favorite Activity" name="favorityActivity-repeat" id="favorityActivity" required>
+    <label for="favoriteActivity"><b>Favorite Activity</b></label>
+    <input type="text" v-model="input.favoriteActivity" placeholder="Enter your Favorite Activity" name="favorityActivity-repeat" id="favorityActivity" required>
     <hr>
 
-    <button type="submit" class="registerbtn">Register</button>
+    <button type="submit" class="registerbtn" @click="register">Register</button>
   </div>
   
   <div class="container signin">
-    <p>Already have an account? <a href="#/login">Sign in</a>.</p>
-    <p>Would you like to return home? <a href="#">Home</a>.</p>
+    <p>Already have an account? <router-link to="/login">Sign in</router-link>.</p>
+    <p>Would you like to return home? <router-link to="/">Home</router-link>.</p>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'Registration',
+  data() {
+    return {
+      input: {
+        username: '',
+        email: '',
+        password: '',
+        address: '',
+        city: '',
+        favoriteActivity: ''
+      }
+    };
+  },
+  methods: {
+    async register() {
+      try {
+        const response = await this.$axios.post('https://localhost:7254/actyin/AthletesComesIn/actyin/registerUser', this.input);
+
+        // Handle the response as needed
+        console.log(response.data);
+
+        // Optionally, you can navigate to the login page after successful registration
+        // this.$router.push('/login');
+      } catch (error) {
+        // Handle errors
+        console.error('Registration failed:', error);
+      }
+    }
+  }
+};
+</script>
 
 <style>
 

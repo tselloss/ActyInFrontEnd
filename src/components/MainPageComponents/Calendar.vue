@@ -1,80 +1,62 @@
 <template>
-<div class="responsive">
-<div class="responsive">
-  <h1>Get Started</h1>
-  <ul>
-    <h3>Discover countless activities near you
-      and match with compatible partners who share your interests.!
-      Don’t just sit there, get active with ActyIn!
-    </h3>
-  </ul>
-</div>
-</div>
+  <div class="appointment-form">
+    <label>
+      Preffered Date:
+      <input type="date" v-model="activityDate">
+    </label>
+
+    <button :disabled="!canBook" @click="book">Book Appointment</button>
+    <p>{{ canBook ? '' : 'Appointment date must be in the future.' }}</p>
+  </div>
 </template>
 
-<script>
-export default {
-  
-  name: 'GetStarted',
-  props: {
-    msg: String
-  }
+<script setup>
+import { ref, computed } from 'vue';
+
+const activityDate = ref(dateToString(new Date()));
+const isFullDay = ref(false);
+
+const canBook = computed(() => isFullDay || isFutureDate(activityDate.value));
+
+function book() {
+  alert(`You have booked a full-day appointment on ${activityDate.value}.`);
 }
 
+function isFutureDate(date) {
+  const selectedDate = new Date(date);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // Set current time to midnight for comparison
+  return selectedDate > today;
+}
+
+function dateToString(date) {
+  return date.toISOString().split('T')[0];
+}
 </script>
 
 <style scoped>
-.responsive {
-  width: 100%;
-  height: auto;
-  background-color: black;
-}
-
-
-.responsivePhoto {
-  width: 80%;
-  height: auto;
-  background-color: black;
-  border-radius: 70px 70px 70px 70px;
-}
-
-.halfpage{
-  width: 50%;
-  height: auto;
-  background-color: black;
+.appointment-form {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-left: 25%;
-  z-index: 1;
-  padding-block-end: 5%;
-}
-h1 {
-  margin: 0 0 0;
-  background-color: black;
-  font-family: 'Limelight', sans-serif;
-  padding-top: 20px;
-}
-h3 {
-  margin: 40px 0 0;
-  background-color: black;
-  font-family: 'Roboto', sans-serif;
+  margin-top: 50px;
 }
 
-h5 {
-  margin: 40px 0 0;
-  background-color: black;
-  font-family: 'Roboto', sans-serif;
+label {
+  margin-bottom: 10px;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin-left: 15%;
-  margin-right: 15%;
+
+input {
+  margin-bottom: 15px;
+  font-size: 15px;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+button {
+  margin-bottom: 15px;
+  font-size: 15px;
 }
-a {
-  color: #42b983;
+
+p {
+  color: red;
 }
 </style>

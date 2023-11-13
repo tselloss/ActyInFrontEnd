@@ -4,8 +4,7 @@ import LoginView from '../views/LoginView.vue'
 import RegistrationView from '../views/RegistrationView.vue'
 import UserProfileView from '../views/UserProfileView.vue'
 import MatchFormView from '../views/MatchFormView.vue'
-import MainPageView from '../views/MainPageView.vue' // Corrected import
-
+import MainPageView from '../views/MainPageView.vue'
 const routes = [
   {
     path: '/',

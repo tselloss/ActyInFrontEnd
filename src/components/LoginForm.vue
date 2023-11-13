@@ -4,22 +4,65 @@
     <hr>
 
     <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Username" name="username-repeat" id="username" required>
+    <input type="text" v-model="input.username" placeholder="Username" name="username-repeat" id="username" required>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email-repeat" id="email" required>
+    <input type="text" v-model="input.email" placeholder="Enter Email" name="email-repeat" id="email" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw-repeat" id="psw" required>
+    <input type="password" v-model="input.password" placeholder="Enter Password" name="psw-repeat" id="psw" required>
 
-    <button type="submit" class="registerbtn1">Sign In</button>
+    <button type="submit" class="registerbtn1" @click="login">Sign In</button>
   </div>
   
   <div class="container signin">
-    <p>Create your Account Now <a href="#/register">Sign Up</a>.</p>
-    <p>Would you like to return home? <a href="#">Home</a>.</p>
+    <p>Create your Account Now <router-link to="/register">Sign Up</router-link>.</p>
+    <p>Would you like to return home? <router-link to="/">Home</router-link>.</p>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'Login',
+  data() {
+    return {
+      input: {
+        username: '',
+        email: '',
+        password: '',
+        token: ''
+      },
+      user: null  // Store user data
+    };
+  },
+  methods: {
+    async login() {
+      try {
+        const response = await this.$axios.post('https://localhost:7254/actyin/AthletesComesIn/actyin/loginUser', this.input);
+
+        // Assuming your response has a 'token' property
+        const { token, password, ...userData } = response.data.token;
+
+        // Store user data in the component's data
+        this.user = userData;
+
+        // Optionally, you can store the token in a global state management solution (e.g., Vuex) for future use
+        // For now, I'll store it in localStorage as an example
+        localStorage.setItem('token', token);
+
+        // Handle the response as needed
+        console.log('User data:', userData);
+        console.log('Token:', token);
+      } catch (error) {
+        // Handle errors
+        console.error('Registration failed:', error);
+      }
+    }
+  }
+};
+</script>
+
+
 
 <style>
 
