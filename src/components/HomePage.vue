@@ -7,7 +7,6 @@
 </div> 
 <router-link to="/login"><ul><button type="submit" class="joinButton">Join Now</button></ul></router-link>
 <router-link to="/register"><ul><button type="submit" class="registerbtn">Register</button> </ul></router-link>
-
 </div>
 <GetStarted/>
 <FindActBuddies/>

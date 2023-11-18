@@ -25,6 +25,7 @@ export default {
   z-index: 1;
   padding-block-end: 5%;
 }
+
 h1 {
   margin: 0 0 0;
   background-color: black;

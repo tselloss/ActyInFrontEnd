@@ -4,6 +4,7 @@
 
 <Calendar/>
 <StepsBar/>
+<FindActComponent/>
 </div>
 </template>
 
@@ -12,6 +13,7 @@
 import MenuBar from '@/components/MainPageComponents/MenuBar.vue'
 import Calendar from './MainPageComponents/Calendar.vue'
 import StepsBar from './MainPageComponents/StepsBar.vue';
+import FindActComponent from './FindActComponent.vue';
 
 export default {
   
@@ -22,7 +24,8 @@ export default {
   components: {
     MenuBar,
     Calendar,
-    StepsBar
+    StepsBar,
+    FindActComponent
   }
 }
 
