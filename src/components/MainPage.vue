@@ -1,7 +1,9 @@
 <template>
 <div class="responsive">
 <MenuBar/>
+
 <Calendar/>
+<StepsBar/>
 </div>
 </template>
 
@@ -9,6 +11,8 @@
 <script>
 import MenuBar from '@/components/MainPageComponents/MenuBar.vue'
 import Calendar from './MainPageComponents/Calendar.vue'
+import StepsBar from './MainPageComponents/StepsBar.vue';
+
 export default {
   
   name: 'MainPage',
@@ -17,7 +21,8 @@ export default {
   },
   components: {
     MenuBar,
-    Calendar
+    Calendar,
+    StepsBar
   }
 }
 

@@ -6,12 +6,7 @@
     <a href="#contact">Contact</a>
     <a href="#about" class="split">Help</a>
   </div>
-  
-  <div style="padding-left:16px">
-    <h2>Split Navigation Example</h2>
-    <p>The "Help" link in the navigation bar is separated from the rest of the navigation links, resulting in a "split navigation" layout.</p>
-  </div>
-</div>
+</div>  
 </template>
 
 <script>
