@@ -42,28 +42,46 @@ export default {
         password: '',
         address: '',
         city: '',
-        favoriteActivity: ''
-      }
+        favoriteActivity: '',
+      },
     };
   },
   methods: {
     async register() {
-      try {
-        const response = await this.$axios.post('https://localhost:7254/actyin/AthletesComesIn/actyin/registerUser', this.input);
+  try {
+    const response = await this.$axios.post(
+      'https://localhost:7254/actyin/AthletesComesIn/actyin/registerUser',
+      this.input
+    );
 
-        // Handle the response as needed
-        console.log(response.data);
+    // Assuming your response has an 'accessToken' property
+    const { accessToken, ...userData } = response.data;
 
-        // Optionally, you can navigate to the login page after successful registration
-        // this.$router.push('/login');
-      } catch (error) {
-        // Handle errors
-        console.error('Registration failed:', error);
-      }
-    }
+    // Store user data in the component's data
+    this.user = userData;
+
+    // Store the token in localStorage for future use
+    localStorage.setItem('token', accessToken);
+
+    // Include the token in the request headers for authentication
+    this.$axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+
+    // Handle the response as needed
+    console.log('User data:', userData);
+    console.log('Token:', accessToken);
+
+    // Optionally, you can navigate to a different page after successful registration
+    // For example, redirect to the home page:
+    this.$router.push('/');
+  } catch (error) {
+    // Handle errors
+    console.error('Registration failed:', error);
   }
+},
+  },
 };
 </script>
+
 
 <style>
 

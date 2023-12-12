@@ -1,29 +1,56 @@
 <template>
   <div class="container">
-    <h1>Your Profile</h1>
+    <h1>User Profile</h1>
     <li><img src="../assets/img_avatar.png" class="img" width="200" height="200"></li>
     <hr>
-
-    <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Username" name="username-repeat" id="username" v-model="userData.username" required>
-
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email-repeat" id="email" v-model="userData.email" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw-repeat" id="psw" v-model="userData.password" required>
-
-    <label for="Address"><b>Address</b></label>
-    <input type="text" placeholder="Enter your Address" name="address-repeat" id="address" v-model="userData.address" required>
-
-    <label for="City"><b>City</b></label>
-    <input type="text" placeholder="Enter your City" name="city" id="city-repeat" v-model="userData.city" required>
-
-    <label for="Favorite Activity"><b>Favorite Activity</b></label>
-    <input type="text" placeholder="Enter your Favorite Activity" name="favorityActivity-repeat" id="favorityActivity" v-model="userData.favoriteActivity" required>
+    
+    <!-- User Photo and Photo Upload -->
+    <div>
+      <h2 for="profilePhoto">Change your Photo Profile<br></h2>
+      <input type="file" id="profilePhoto" accept="image/*" @change="handleFileChange">
+      <img v-if="userPhoto" :src="userPhoto" class="img" width="200" height="200" />
+    </div>    
     <hr>
-    <button type="submit" class="registerbtn">Update</button>
+    <div>
+      <!-- Reservations Placeholder -->
+      <h2>Reservations</h2>
+
+      <ul>
+        <li>Reservation 1</li>
+        <li>Reservation 2</li>
+        <!-- Add more reservation items as needed -->
+      </ul>
+    </div>
+    <hr>
+
+
+    <!-- User Credentials -->
+    <div>
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Username" name="username-repeat" id="username" v-model="userData.username" required>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email-repeat" id="email" v-model="userData.email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw-repeat" id="psw" v-model="userData.password" required>
+
+      <label for="Address"><b>Address</b></label>
+      <input type="text" placeholder="Enter your Address" name="address-repeat" id="address" v-model="userData.address" required>
+
+      <label for="City"><b>City</b></label>
+      <input type="text" placeholder="Enter your City" name="city" id="city-repeat" v-model="userData.city" required>
+
+      <label for="Favorite Activity"><b>Favorite Activity</b></label>
+      <input type="text" placeholder="Enter your Favorite Activity" name="favorityActivity-repeat" id="favorityActivity" v-model="userData.favoriteActivity" required>
+    </div>
+    <hr>
+
+    <!-- Update Profile Button -->
+    <button type="submit" class="registerbtn" @click="updateProfile">Update</button>
   </div>
+
+  <!-- Sign-in Container -->
   <div class="container signin">
     <p>Would you like to find some new Activities to do? <a href="#">Activities</a>.</p>
   </div>
@@ -50,26 +77,27 @@ export default {
   created() {
     // Fetch data from your API and set it to userData
     // Example:
-    this.fetchUserData();
+    // this.fetchUserData();
   },
   methods: {
-    fetchUserData() {
-      // Simulating API request with a setTimeout
-      setTimeout(() => {
-        // Replace this with your actual API call to fetch user data
-        const apiResponse = {
-          username: 'John Doe',
-          email: 'john@example.com',
-          password: '********',
-          address: '123 Main St',
-          city: 'Cityville',
-          favoriteActivity: 'Hiking'
-        };
-
-        // Set the retrieved data to userData
-        this.userData = apiResponse;
-      }, 0);
-    }
+    updateProfile() {
+      // Handle the logic to update user profile, including the photo
+      // You can use this.userData for other user data and this.userPhoto for the photo
+    },
+    handleFileChange(event) {
+      const file = event.target.files[0];
+      if (file) {
+        this.userPhoto = URL.createObjectURL(file);
+      }
+    },
+    // You can implement a method to fetch user data from your API
+    // fetchUserData() {
+    //   // Fetch data from your API and set it to userData
+    //   // Example:
+    //   // api.getUserData().then(response => {
+    //   //   this.userData = response.data;
+    //   // });
+    // }
   }
 };
 </script>
@@ -224,6 +252,10 @@ hr {
   opacity: 1;
 }
 
+img {
+  border-radius: 50%;
+  margin-top: 10px; 
+}
 
 h1 {
   margin: 0 0 0;

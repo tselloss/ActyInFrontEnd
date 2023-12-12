@@ -46,7 +46,7 @@ export default {
 
 .progress-bar {
   height: 20px;
-  background-color: #4CAF50;
+  background-color: #457B9D;
   transition: width 0.3s ease;
   width: 100%;
   position: absolute;
@@ -65,13 +65,13 @@ export default {
 .steps div {
   width: 60px;
   height: 60px;
-  border: 2px solid #4CAF50;
+  border: 2px solid white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
-  color: #4CAF50;
+  background-color: #457B9D;
+  color: white;
   font-weight: bold;
   cursor: pointer;
 }

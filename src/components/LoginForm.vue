@@ -1,5 +1,7 @@
 <template>
   <div class="container">
+    
+    <form @submit.prevent="submit">
     <h1>Join Now</h1>
     <hr>
 
@@ -11,10 +13,11 @@
 
     <label for="psw"><b>Password</b></label>
     <input type="password" v-model="input.password" placeholder="Enter Password" name="psw-repeat" id="psw" required>
-
+ 
     <button type="submit" class="registerbtn1" @click="login">Sign In</button>
+    
+</form>
   </div>
-  
   <div class="container signin">
     <p>Create your Account Now <router-link to="/register">Sign Up</router-link>.</p>
     <p>Would you like to return home? <router-link to="/">Home</router-link>.</p>
@@ -22,6 +25,9 @@
 </template>
 
 <script>
+import { useRouter } from 'vue-router';
+import axios from "axios";
+
 export default {
   name: 'Login',
   data() {
@@ -30,35 +36,43 @@ export default {
         username: '',
         email: '',
         password: '',
-        token: ''
       },
-      user: null  // Store user data
+      user: null, // Store user data
     };
   },
   methods: {
     async login() {
       try {
-        const response = await this.$axios.post('https://localhost:7254/actyin/AthletesComesIn/actyin/loginUser', this.input);
+        const response = await this.$axios.post(
+          'https://localhost:7254/actyin/AthletesComesIn/actyin/loginUser',
+          this.input
+        );
 
         // Assuming your response has a 'token' property
-        const { token, password, ...userData } = response.data.token;
+        const { token, password, ...userData } = response.data;
 
         // Store user data in the component's data
         this.user = userData;
 
-        // Optionally, you can store the token in a global state management solution (e.g., Vuex) for future use
-        // For now, I'll store it in localStorage as an example
+        // Store the token in localStorage for future use
         localStorage.setItem('token', token);
+
+        // Include the token in the request headers for authentication
+        this.$axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
         // Handle the response as needed
         console.log('User data:', userData);
         console.log('Token:', token);
+
+        // Optionally, you can redirect the user or perform other actions here
+        // For example, redirect to the home page:
+        this.$router.push('/main');
       } catch (error) {
         // Handle errors
-        console.error('Registration failed:', error);
+        console.error('Login failed:', error);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

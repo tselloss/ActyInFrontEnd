@@ -1,8 +1,13 @@
 <template>
   <div class="appointment-form">
     <label>
-      Preffered Date:
-      <input type="date" v-model="activityDate">
+      Preferred Date:
+      <input type="date" v-model="activityDate" :disabled="flexibleDate">
+    </label>
+
+    <label>
+      I'm Flexible:
+      <input type="checkbox" v-model="flexibleDate" @change="handleFlexibilityChange">
     </label>
 
     <button :disabled="!canBook" @click="book">Book Appointment</button>
@@ -14,12 +19,16 @@
 import { ref, computed } from 'vue';
 
 const activityDate = ref(dateToString(new Date()));
-const isFullDay = ref(false);
+const flexibleDate = ref(false);
 
-const canBook = computed(() => isFullDay || isFutureDate(activityDate.value));
+const canBook = computed(() => flexibleDate.value || isFutureDate(activityDate.value));
 
 function book() {
-  alert(`You have booked a full-day appointment on ${activityDate.value}.`);
+  if (flexibleDate.value) {
+    alert(`You have booked a flexible appointment.`);
+  } else {
+    alert(`You have booked an appointment on ${activityDate.value}.`);
+  }
 }
 
 function isFutureDate(date) {
@@ -31,6 +40,13 @@ function isFutureDate(date) {
 
 function dateToString(date) {
   return date.toISOString().split('T')[0];
+}
+
+function handleFlexibilityChange() {
+  // Reset the date when flexibility changes
+  if (flexibleDate.value) {
+    activityDate.value = dateToString(new Date());
+  }
 }
 </script>
 
