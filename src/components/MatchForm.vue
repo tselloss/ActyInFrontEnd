@@ -1,24 +1,43 @@
+Your code looks mostly fine, but there is a small issue with the image URL in your template. The athleteInfoDTO object might not exist for each activity, so you need to ensure it's available before accessing its properties. Here's the corrected version:
+
+html
+
 <template>
   <div class="container">
     <h1>Potential ActioNist</h1>
-    <li><img src="../assets/img_avatar.png" class="img" width="350" height="400"></li>   
-    <ul>
+
+    <div v-if="activities.length > 0">
       <li>
-        <button type="submit" class="registerbtn3">
-          <img src="../assets/tick.png" class="boximg">
-          </button>
+        <img :src="getPhotoUrl(activities[0])" class="img" width="350" height="400">
       </li>
+      <ul>
+        <li>
+          <button type="submit" class="registerbtn3">
+            <img src="../assets/tick.png" class="boximg">
+          </button>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <button type="submit" class="registerbtn3">
+            <img src="../assets/next.png" class="boximg">
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div v-else>
       <li>
-        <button type="submit" class="registerbtn3">
-          <img src="../assets/next.png" class="boximg">
-          </button>
+        <h2>We have no records for this activity or this date.<br> We will inform you by email.</h2>
+        <button type="submit" class="buttonSignIn"></button>
       </li>
-    </ul>
-    
+    </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'MatchForm',
   props: {
@@ -33,35 +52,38 @@ export default {
         address: '',
         city: '',
         favoriteActivity: ''
-      }
+      },
+      activities: []
     };
   },
   created() {
-    // Fetch data from your API and set it to userData
-    // Example:
+    // Fetch data from your API and set it to userData and activities
     this.fetchUserData();
   },
   methods: {
-    fetchUserData() {
-      // Simulating API request with a setTimeout
-      setTimeout(() => {
-        // Replace this with your actual API call to fetch user data
-        const apiResponse = {
-          username: 'John Doe',
-          email: 'john@example.com',
-          password: '********',
-          address: '123 Main St',
-          city: 'Cityville',
-          favoriteActivity: 'Hiking'
-        };
+    async fetchUserData() {
+      try {
+        const response = await axios.get('https://localhost:7254/actyin/ChooseActivity/actyin/getAllChosenActivities');
+        this.activities = response.data;
+        const firstActivity = this.activities[0];
 
-        // Set the retrieved data to userData
-        this.userData = apiResponse;
-      }, 0);
+        // Set the retrieved data to userData (if needed)
+        if (firstActivity && firstActivity.athleteInfoDTO) {
+          this.userData = firstActivity.athleteInfoDTO;
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    },
+    getPhotoUrl(activity) {
+      return activity && activity.athleteInfoDTO
+        ? `https://localhost:7254/actyin/File/getPhotoByUsername?username=${activity.athleteInfoDTO.username}`
+        : ''; // You can provide a default image URL or handle this case as needed
     }
   }
 };
 </script>
+
 
 <style>
 

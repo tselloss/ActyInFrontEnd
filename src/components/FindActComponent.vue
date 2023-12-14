@@ -28,7 +28,7 @@ export default {
         { id: 6, name: 'Basketball'},
         { id: 7, name: 'Billiards' },
         { id: 8, name: 'Roadtrip'},
-        { id: 9, name: 'Tennis' },
+        { id: 9, name: 'Tennis', },
       ],
       selectedActivity: null,
     };
@@ -36,6 +36,7 @@ export default {
   methods: {
     selectActivity(activity) {
       this.selectedActivity = activity;
+      localStorage.setItem('Activity', activity.name)
     },
   },
   async created() {
