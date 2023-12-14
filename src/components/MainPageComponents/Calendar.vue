@@ -10,7 +10,10 @@
       <input type="checkbox" v-model="flexibleDate" @change="handleFlexibilityChange">
     </label>
 
-    <button :disabled="!canBook" @click="book">Book Appointment</button>
+    <div>
+      <h2>You selected: {{ formatSelectedDate }}</h2>
+    </div>
+    
     <p>{{ canBook ? '' : 'Appointment date must be in the future.' }}</p>
   </div>
 </template>
@@ -22,6 +25,7 @@ const activityDate = ref(dateToString(new Date()));
 const flexibleDate = ref(false);
 
 const canBook = computed(() => flexibleDate.value || isFutureDate(activityDate.value));
+const formatSelectedDate = computed(() => formatDate(activityDate.value));
 
 function book() {
   if (flexibleDate.value) {
@@ -47,6 +51,11 @@ function handleFlexibilityChange() {
   if (flexibleDate.value) {
     activityDate.value = dateToString(new Date());
   }
+}
+
+function formatDate(dateString) {
+  const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+  return new Date(dateString).toLocaleDateString(undefined, options);
 }
 </script>
 

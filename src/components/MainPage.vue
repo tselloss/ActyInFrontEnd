@@ -1,35 +1,42 @@
 <template>
-<div class="responsive">
-<MenuBar/>
+  <div class="responsive">
+    <MenuBar />
 
-<Calendar/>
-<StepsBar/>
-<FindActComponent/>
-</div>
+    <!-- StepsBar Component - Visible in all steps -->
+    <StepsBar />
+
+    <!-- FindActComponent - Visible in Step 2 -->
+    <FindActComponent v-if="currentStep === 2" />
+
+    <!-- FindActComponent - Visible in Step 2 -->
+    <MatchForm v-if="currentStep === 3" />
+  </div>
 </template>
 
-
 <script>
-import MenuBar from '@/components/MainPageComponents/MenuBar.vue'
-import Calendar from './MainPageComponents/Calendar.vue'
+import MenuBar from '@/components/MainPageComponents/MenuBar.vue';
+import Calendar from './MainPageComponents/Calendar.vue';
 import StepsBar from './MainPageComponents/StepsBar.vue';
 import FindActComponent from './FindActComponent.vue';
+import MatchForm from './MatchForm.vue';
 
 export default {
-  
   name: 'MainPage',
-  props: {
-    msg: String
-  },
   components: {
     MenuBar,
     Calendar,
     StepsBar,
-    FindActComponent
-  }
-}
-
+    FindActComponent,
+    MatchForm
+},
+  data() {
+    return {
+      currentStep: 1,
+    };
+  },
+};
 </script>
+
 
 <style scoped>
 

@@ -1,11 +1,30 @@
 <template>
   <div class="progress-container">
     <div class="progress-bar" :style="{ width: progressBarWidth }"></div>
- <hr>
-    <div class="steps">
-      <div v-for="(step, index) in steps" :key="index" :class="{ active: index + 1 === currentStep }">
-        {{ step }}
-      </div>
+    <hr>
+
+    <!-- Step 1: Calendar -->
+    <div v-if="currentStep === 1">
+      <h2>Step 1: Select a Date</h2>
+      <!-- Include your calendar component here -->
+      <CalendarComponent @dateSelected="goToStep(2)" />
+    </div>
+
+    <!-- Step 2: FindActComponent -->
+    <div v-if="currentStep === 2">
+      <h2>Step 2: Find Activities</h2>
+      <!-- Include your FindActComponent here -->
+      <FindActComponent @nextStep="goToStep(3)" />
+    </div>
+
+    <div v-if="currentStep === 3">
+      <h2>Step 3: Are You Ready To Find Partner?</h2>
+      <MatchForm></MatchForm>
+    </div>
+
+    <!-- Step 3: Display Steps bar only -->
+    <div v-if="currentStep === 4">
+      <h2>Step 3: Completed</h2>
     </div>
 
     <div class="navigation-buttons">
@@ -17,12 +36,21 @@
 </template>
 
 <script>
+import CalendarComponent from "./Calendar";
+import FindActComponent from "../FindActComponent.vue"; 
+import MatchForm from '../MatchForm.vue';
+
 export default {
+  components: {
+    CalendarComponent,
+    FindActComponent,
+    MatchForm,
+  },
   data() {
     return {
       currentStep: 1,
       progressBarWidth: '0%',
-      steps: ['1', '2', '3']
+      steps: ['1', '2', '3'],
     };
   },
   methods: {
@@ -31,10 +59,11 @@ export default {
         this.currentStep = step;
         this.progressBarWidth = `${((this.currentStep - 1) / (this.steps.length - 1)) * 100}%`;
       }
-    }
-  }
+    },
+  },
 };
 </script>
+
 
 <style scoped>
 .progress-container {

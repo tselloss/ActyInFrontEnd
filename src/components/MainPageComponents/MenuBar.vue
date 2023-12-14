@@ -1,10 +1,10 @@
 <template>
 <div class="responsive">  
   <div class="topnav">
-    <a class="active" href="#home">Home</a>
-    <a href="#date">Select Date</a>
-    <a href="#contact">Contact</a>
-    <a href="#about" class="split">Help</a>
+    <a class="active" href="/main#/">Home</a>
+    <a href="/main#/main">Select Date</a>
+    <a href="/main#/about">Contact</a>
+    <a href="/main#/about" class="split">Help</a>
   </div>
 </div>  
 </template>

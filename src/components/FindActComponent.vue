@@ -2,33 +2,35 @@
   <div>
     <h2>Choose an Activity</h2>
     <div class="activity-block" v-for="activity in activities" :key="activity.id" @click="selectActivity(activity)">
-      <img :src="activity.image" class="activity-image">
+      <img :src="`https://localhost:7254/actyin/File/getPhotoForSports?sport=${activity.name.toLowerCase()}`" class="activity-image">
       <p>{{ activity.name }}</p>
     </div>
 
     <div v-if="selectedActivity">
       <p>You selected: {{ selectedActivity.name }}</p>
+      <img :src="selectedActivity.image" class="selected-activity-image">
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
       activities: [
-        { id: 1, name: 'Running', image: '../assets/pooltable.jpg' },
-        { id: 2, name: 'Cycling', image: '/src/assets/bike.jpg' },
-        { id: 3, name: 'Chess', image: '/src/assets/chess.jpg' },
-        { id: 4, name: 'Hiking', image: '/src/assets/hiking.jpg' },
-        { id: 5, name: 'Pool', image: '../assets/pooltable.jpg' },
-        { id: 5, name: 'Boxing', image: '/src/assets/gymnastics.jpg' },
-        { id: 5, name: 'Wallking', image: '../assets/City.jpg' },
-        { id: 5, name: 'Trip', image: '../assets/roadtrip.jpg '},
-        { id: 5, name: 'Tennis', image: '../assets/tennis.jpg' },
-        // Add more activities as needed
+        { id: 1, name: 'Running' },
+        { id: 2, name: 'Bicycle' },
+        { id: 3, name: 'Chess' },
+        { id: 4, name: 'Hiking' },
+        { id: 5, name: 'Tennis' },
+        { id: 6, name: 'Basketball'},
+        { id: 7, name: 'Billiards' },
+        { id: 8, name: 'Roadtrip'},
+        { id: 9, name: 'Tennis' },
       ],
-      selectedActivity: { id: 1, name: 'Running', image: '/src/assets/basketball.jpg' }, // Default selected activity
+      selectedActivity: null,
     };
   },
   methods: {
@@ -36,8 +38,19 @@ export default {
       this.selectedActivity = activity;
     },
   },
+  async created() {
+  // Fetch images dynamically based on the sport names
+  for (const activity of this.activities) {
+    try {
+      const response = await axios.get(`https://localhost:7254/actyin/File/getPhotoForSports?sport=${activity.name.toLowerCase()}`);         
+    } catch (error) {
+      console.error(`Failed to fetch image for ${activity.name}:`, error);
+    }
+  }
+},
 };
 </script>
+
 
 <style scoped>
 .activity-block {

@@ -52,7 +52,7 @@
 
   <!-- Sign-in Container -->
   <div class="container signin">
-    <p>Would you like to find some new Activities to do? <a href="#">Activities</a>.</p>
+    <p>Would you like to find some new Activities to do? <a href="/#/main">Activities</a>.</p>
   </div>
 </template>
 
