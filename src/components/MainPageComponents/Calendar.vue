@@ -55,7 +55,9 @@ function handleFlexibilityChange() {
 
 function formatDate(dateString) {
   const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
-  return new Date(dateString).toLocaleDateString(undefined, options);
+  const date = new Date(dateString).toLocaleDateString(undefined, options);
+  localStorage.setItem('Date', date)
+  return date;
 }
 </script>
 

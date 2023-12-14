@@ -48,40 +48,43 @@ export default {
   },
   methods: {
     async register() {
-  try {
-    const response = await this.$axios.post(
-      'https://localhost:7254/actyin/AthletesComesIn/actyin/registerUser',
-      this.input
-    );
+      try {
+        const response = await this.$axios.post(
+          'https://localhost:7254/actyin/AthletesComesIn/actyin/registerUser',
+          this.input
+        );
 
-    // Assuming your response has an 'accessToken' property
-    const { accessToken, ...userData } = response.data;
+        // Extract the token from the response object
+        const accessToken = response.data?.token;
 
-    // Store user data in the component's data
-    this.user = userData;
+        // Check if the token is available
+        if (accessToken) {
+          // Store the token in localStorage for future use
+          localStorage.setItem('UserToken', accessToken.token);
+          localStorage.setItem('Username', accessToken.username);
+          localStorage.setItem('Email', accessToken.email);
 
-    // Store the token in localStorage for future use
-    localStorage.setItem('token', accessToken);
+          // Include the token in the request headers for authentication
+          this.$axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken.token}`;
 
-    // Include the token in the request headers for authentication
-    this.$axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+          // Handle the response as needed
+          console.log('Responce:', accessToken);
+          console.log(`Bearer ${accessToken.token}`);
 
-    // Handle the response as needed
-    console.log('User data:', userData);
-    console.log('Token:', accessToken);
-
-    // Optionally, you can navigate to a different page after successful registration
-    // For example, redirect to the home page:
-    this.$router.push('/');
-  } catch (error) {
-    // Handle errors
-    console.error('Registration failed:', error);
-  }
-},
+          // Optionally, you can navigate to a different page after successful registration
+          // For example, redirect to the home page:
+          this.$router.push('/#/main');
+        } else {
+          console.error('Access token not found in the response.');
+        }
+      } catch (error) {
+        // Handle errors
+        console.error('Registration failed:', error);
+      }
+    },
   },
 };
 </script>
-
 
 <style>
 

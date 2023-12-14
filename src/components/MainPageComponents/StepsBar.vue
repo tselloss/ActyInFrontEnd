@@ -57,7 +57,7 @@ export default {
     goToStep(step) {
       if (step >= 1 && step <= this.steps.length) {
         this.currentStep = step;
-        this.progressBarWidth = `${((this.currentStep - 1) / (this.steps.length - 1)) * 100}%`;
+        this.progressBarWidth = `${((this.currentStep - 1) / (this.steps.length - 1)) * 100}%`;        
       }
     },
   },

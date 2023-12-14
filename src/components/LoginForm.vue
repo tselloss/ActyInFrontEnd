@@ -51,19 +51,25 @@ export default {
         // Assuming your response has a 'token' property
         const { token, password, ...userData } = response.data;
 
+        // Extract the token from the response object
+        const accessToken = response.data?.token;
+
         // Store user data in the component's data
         this.user = userData;
 
         // Store the token in localStorage for future use
-        localStorage.setItem('token', token);
+        localStorage.setItem('UserToken', accessToken.token);
+        localStorage.setItem('Username', accessToken.username);
+        localStorage.setItem('Email', accessToken.email);
 
-        // Include the token in the request headers for authentication
-        this.$axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+        // Set the token in Axios defaults for future requests
+        this.$axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken.token}`;
 
         // Handle the response as needed
         console.log('User data:', userData);
         console.log('Token:', token);
-
+        console.log(`Bearer ${accessToken.token}`);
+        
         // Optionally, you can redirect the user or perform other actions here
         // For example, redirect to the home page:
         this.$router.push('/main');
@@ -75,7 +81,6 @@ export default {
   },
 };
 </script>
-
 
 
 <style>
