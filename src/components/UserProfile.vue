@@ -1,15 +1,6 @@
 <template>
-  <div class="container">
-    <h1>User Profile</h1>
-    <li><img src="../assets/img_avatar.png" class="img" width="200" height="200"></li>
-    <hr>
-    
-    <!-- User Photo and Photo Upload -->
-    <div>
-      <h2 for="profilePhoto">Change your Photo Profile<br></h2>
-      <input type="file" id="profilePhoto" accept="image/*" @change="handleFileChange">
-      <img v-if="userPhoto" :src="userPhoto" class="img" width="200" height="200" />
-    </div>    
+  <div class="container">    
+    <UploadPhoto></UploadPhoto>       
     <hr>
     <div>
       <!-- Reservations Placeholder -->
@@ -47,7 +38,7 @@
     <hr>
 
     <!-- Update Profile Button -->
-    <button type="submit" class="registerbtn" @click="updateProfile">Update</button>
+    <button type="submit" class="registerbtn" @click="uploadProfilePhoto">Update</button>
   </div>
 
   <!-- Sign-in Container -->
@@ -57,10 +48,16 @@
 </template>
 
 <script>
+import axios from 'axios';
+import UploadPhoto from '@/components/MainPageComponents/UploadPhoto.vue';
 export default {
   name: 'UserProfile',
   props: {
-    msg: String
+    msg: String,
+  },
+  components:
+  {
+    UploadPhoto
   },
   data() {
     return {
@@ -70,36 +67,9 @@ export default {
         password: '',
         address: '',
         city: '',
-        favoriteActivity: ''
+        favoriteActivity: '',
       }
-    };
-  },
-  created() {
-    // Fetch data from your API and set it to userData
-    // Example:
-    // this.fetchUserData();
-  },
-  methods: {
-    updateProfile() {
-      // Handle the logic to update user profile, including the photo
-      // You can use this.userData for other user data and this.userPhoto for the photo
-    },
-    handleFileChange(event) {
-      const file = event.target.files[0];
-      if (file) {
-        this.userPhoto = URL.createObjectURL(file);
-      }
-    },
-    // You can implement a method to fetch user data from your API
-    // fetchUserData() {
-    //   // Fetch data from your API and set it to userData
-    //   // Example:
-    //   // api.getUserData().then(response => {
-    //   //   this.userData = response.data;
-    //   // });
-    // }
-  }
-};
+    };}}
 </script>
 
 <style>
@@ -288,5 +258,6 @@ li {
 a {
   color: #42b983;
 }
+
 </style>
 

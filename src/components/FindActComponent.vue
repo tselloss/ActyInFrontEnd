@@ -24,7 +24,7 @@ export default {
         { id: 2, name: 'Bicycle' },
         { id: 3, name: 'Chess' },
         { id: 4, name: 'Hiking' },
-        { id: 5, name: 'Tennis' },
+        { id: 5, name: 'Running' },
         { id: 6, name: 'Basketball'},
         { id: 7, name: 'Billiards' },
         { id: 8, name: 'Roadtrip'},

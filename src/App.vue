@@ -6,7 +6,8 @@
     <router-link to="/register">Register</router-link> |
     <router-link to="/user">User</router-link>|
     <router-link to="/match">Match Page</router-link>|
-    <router-link to="/main">Main Page</router-link>
+    <router-link to="/activityselection">Activity Selection</router-link>|
+    <router-link to="/main">Find Buddies</router-link>
   </nav>
   <router-view/>
 </template>

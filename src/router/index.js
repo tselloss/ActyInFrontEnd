@@ -5,6 +5,7 @@ import RegistrationView from '../views/RegistrationView.vue'
 import UserProfileView from '../views/UserProfileView.vue'
 import MatchFormView from '../views/MatchFormView.vue'
 import MainPageView from '../views/MainPageView.vue'
+import AthletesSelectionsView from '../views/AthletesSelections.vue'
 const routes = [
   {
     path: '/',
@@ -40,6 +41,11 @@ const routes = [
     path: '/main',
     name: 'main',
     component: MainPageView
+  },
+  {
+    path: '/activityselection',
+    name: 'activityselection',
+    component: AthletesSelectionsView
   }
 ]
 

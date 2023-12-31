@@ -1,7 +1,3 @@
-Your code looks mostly fine, but there is a small issue with the image URL in your template. The athleteInfoDTO object might not exist for each activity, so you need to ensure it's available before accessing its properties. Here's the corrected version:
-
-html
-
 <template>
   <div class="container">
     <h1>Potential ActioNist</h1>
@@ -64,6 +60,7 @@ export default {
     async fetchUserData() {
       try {
         const response = await axios.get('https://localhost:7254/actyin/ChooseActivity/actyin/getAllChosenActivities');
+        
         this.activities = response.data;
         const firstActivity = this.activities[0];
 
@@ -71,6 +68,9 @@ export default {
         if (firstActivity && firstActivity.athleteInfoDTO) {
           this.userData = firstActivity.athleteInfoDTO;
         }
+
+        const responseUser = await axios.get('https://localhost:7254/actyin/ChooseActivity/actyin/getUserById/'+'${activity.athleteInfoDTO.username}');
+        
       } catch (error) {
         console.error('Error fetching data:', error);
       }
