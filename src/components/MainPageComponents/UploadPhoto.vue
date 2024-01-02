@@ -4,9 +4,9 @@
     <li><img :src="`https://localhost:7254/actyin/File/getPhotoByUsername?username=${this.username}`" class="img" width="300" height="300"></li>
     <hr>
   </div>
-  <div class="container">
+  <div class="responsive">
     <h2 for="profilePhoto">Change your Photo Profile<br></h2>
-    <input type="file" @change="onFileSelected">
+    <input type="file" id="fileInput" @change="onFileSelected" class="custom-file-upload">
     <br>
     <button type="submit" class="registerbtn" @click="uploadProfilePhoto">Upload Photo</button>
   </div>
@@ -112,5 +112,28 @@ li {
 }
 a {
   color: #42b983;
+}
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-block-end: 10%;
+}
+
+#fileInput {
+  display: none; /* Hide the actual file input */
+}
+
+#fileInput.custom-file-upload {
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #363636;
+  color: #fff6f6;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 </style>

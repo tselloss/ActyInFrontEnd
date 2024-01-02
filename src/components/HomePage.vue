@@ -29,8 +29,7 @@ import Questions from '@/components/Questions.vue'
 import StayTuned from '@/components/StayTuned.vue'
 import CopyRights from '@/components/CopyRights.vue'
 
-export default {
-  
+export default {  
   name: 'HomePage',
   props: {
     msg: String

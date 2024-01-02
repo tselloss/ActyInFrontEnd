@@ -2,16 +2,7 @@
   <div class="container">    
     <UploadPhoto></UploadPhoto>       
     <hr>
-    <div>
-      <!-- Reservations Placeholder -->
-      <h2>Reservations</h2>
-
-      <ul>
-        <li>Reservation 1</li>
-        <li>Reservation 2</li>
-        <!-- Add more reservation items as needed -->
-      </ul>
-    </div>
+    <BookingFields></BookingFields>
     <hr>
 
 
@@ -50,6 +41,8 @@
 <script>
 import axios from 'axios';
 import UploadPhoto from '@/components/MainPageComponents/UploadPhoto.vue';
+import BookingFields from './MainPageComponents/BookingFields.vue';
+
 export default {
   name: 'UserProfile',
   props: {
@@ -57,7 +50,8 @@ export default {
   },
   components:
   {
-    UploadPhoto
+    UploadPhoto,
+    BookingFields
   },
   data() {
     return {

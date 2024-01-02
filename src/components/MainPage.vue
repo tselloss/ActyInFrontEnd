@@ -1,14 +1,8 @@
 <template>
   <div class="responsive">
     <MenuBar />
-
-    <!-- StepsBar Component - Visible in all steps -->
     <StepsBar />
-
-    <!-- FindActComponent - Visible in Step 2 -->
     <FindActComponent v-if="currentStep === 2" />
-
-    <!-- FindActComponent - Visible in Step 2 -->
     <MatchForm v-if="currentStep === 3" />
   </div>
 </template>
