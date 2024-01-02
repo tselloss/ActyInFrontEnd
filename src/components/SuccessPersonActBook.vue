@@ -17,7 +17,6 @@ export default {
   },
   methods: {
     saveChoosenActivity() {
-      // Access data from local storage and save it to the database
       const Username = localStorage.getItem('Username');
       const Date = localStorage.getItem('Date');
       const Activity = localStorage.getItem('Activity');
@@ -47,7 +46,7 @@ export default {
 <style scoped>
 .responsive {
   width: 100%;
-  height: auto;
+  height: 60vh;
   background-color: black;
 }
 
@@ -72,7 +71,7 @@ h1 {
   margin: 0 0 0;
   background-color: black;
   font-family: 'Limelight', sans-serif;
-  padding-top: 20px;
+  padding-top: 25%;
 }
 h3 {
   margin: 40px 0 0;

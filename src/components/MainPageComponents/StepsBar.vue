@@ -4,7 +4,9 @@
     <hr>
 
     <!-- Step 1: Calendar -->
-    <div v-if="currentStep === 1">
+    <div v-if="currentStep === 1">      
+    <h2>Ready to Connect and Make Memories?</h2>
+    <p>Discover exciting activities and find a buddy to join you in the adventure. Make a selection, and let the fun begin!</p>
       <h2>Step 1: Select a Date</h2>
       <!-- Include your calendar component here -->
       <CalendarComponent @dateSelected="goToStep(2)" />

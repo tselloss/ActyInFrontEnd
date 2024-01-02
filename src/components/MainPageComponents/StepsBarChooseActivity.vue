@@ -5,6 +5,10 @@
 
     <!-- Step 1: Calendar -->
     <div v-if="currentStep === 1">
+      <h2>Embark on Unforgettable Adventures!</h2>
+      <p>Book an exciting activity now, and once we find you a partner, we'll notify you via email. 
+      <br>Discover thrilling experiences and find the perfect companion to share the adventure with. 
+      <br>Your next memorable moment is just a click away!</p>
       <h2>Step 1: Select a Date</h2>
       <!-- Include your calendar component here -->
       <CalendarComponent @dateSelected="goToStep(2)" />
