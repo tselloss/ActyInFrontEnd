@@ -9,16 +9,16 @@
     <!-- User Credentials -->
     <div>
       <label for="username"><b>Username</b></label>
-      <input type="text" placeholder="Username" name="username-repeat" id="username" v-model="userData.username" required>
+      <input type="text" placeholder="Username" name="username-repeat" id="username" v-model="userData.username" readonly>
 
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email-repeat" id="email" v-model="userData.email" required>
+      <input type="text" placeholder="Enter Email" name="email-repeat" id="email" v-model="userData.email" readonly>
 
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw-repeat" id="psw" v-model="userData.password" required>
 
-      <label for="Address"><b>Address</b></label>
-      <input type="text" placeholder="Enter your Address" name="address-repeat" id="address" v-model="userData.address" required>
+      <label for="Address"><b>PostalCode</b></label>
+      <input type="text" placeholder="Enter your Address" name="address-repeat" id="address" v-model="userData.postalCode" required>
 
       <label for="City"><b>City</b></label>
       <input type="text" placeholder="Enter your City" name="city" id="city-repeat" v-model="userData.city" required>
@@ -29,12 +29,14 @@
     <hr>
 
     <!-- Update Profile Button -->
-    <button type="submit" class="registerbtn" @click="uploadProfilePhoto">Update</button>
+    <button type="submit" class="registerbtn" @click="uploadProfile">Update</button>
+
+    <p>Would you like to find some new Activities to do? <a href="/#/main">Activities</a>.</p>
   </div>
 
   <!-- Sign-in Container -->
   <div class="container signin">
-    <p>Would you like to find some new Activities to do? <a href="/#/main">Activities</a>.</p>
+    
   </div>
 </template>
 
@@ -48,8 +50,7 @@ export default {
   props: {
     msg: String,
   },
-  components:
-  {
+  components: {
     UploadPhoto,
     BookingFields
   },
@@ -59,12 +60,59 @@ export default {
         username: '',
         email: '',
         password: '',
-        address: '',
+        postalCode: '',
         city: '',
         favoriteActivity: '',
       }
-    };}}
+    };
+  },
+  mounted() {
+    // Fetch user data from API
+    this.fetchUserData();
+  },
+  methods: {
+    async fetchUserData() {
+      try {
+        // Assuming you have the username stored in localStorage
+        const storedUsername = localStorage.getItem('Username');
+
+        // Check if username is available
+        if (storedUsername) {
+          // Make API request to get user data
+          const response = await axios.get(`https://localhost:7254/actyin/Athletes/actyin/getUserByUsername?username=${storedUsername}`);
+
+          // Update userData with the fetched data
+          this.userData = response.data;
+          this.userData.password = '*****';
+          console.log(this.userData)
+        } else {
+          console.error('Username not found in localStorage');
+        }
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    },
+    async uploadProfile() {
+      try {
+        // Make API request to update user profile
+        await axios.put('https://localhost:7254/actyin/Athletes/actyin/editAthleteInfo', {
+          username: this.userData.username,
+          email: this.userData.email,
+          password: this.userData.password,
+          postalCode: this.userData.postalCode,
+          city: this.userData.city,
+          favoriteActivity: this.userData.favoriteActivity,
+        });
+
+        console.log('Profile updated successfully');
+      } catch (error) {
+        console.error('Error updating user profile:', error);
+      }
+    },
+  },
+};
 </script>
+
 
 <style>
 
@@ -91,6 +139,7 @@ img {
 .container {
   padding: 16px;
   background-color: #000;
+  height: 90vh;
 }
 
 /* Full-width input fields */

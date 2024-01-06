@@ -1,6 +1,5 @@
 <template>
-  <div class="container">
-    
+  <div class="container">    
     <form @submit.prevent="submit">
     <h1>Join Now</h1>
     <hr>
@@ -15,13 +14,10 @@
     <input type="password" v-model="input.password" placeholder="Enter Password" name="psw-repeat" id="psw" required>
  
     <button type="submit" class="registerbtn1" @click="login">Sign In</button>
-    
-</form>
-  </div>
-  <div class="container signin">
     <p>Create your Account Now <router-link to="/register">Sign Up</router-link>.</p>
     <p>Would you like to return home? <router-link to="/">Home</router-link>.</p>
-  </div>
+</form>
+</div>
 </template>
 
 <script>

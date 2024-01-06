@@ -23,9 +23,11 @@
     <hr>
 
     <button type="submit" class="registerbtn" @click="register">Register</button>
+    
   </div>
   
-  <div class="container signin">
+  <div class="container-signin">
+    <br>
     <p>Already have an account? <router-link to="/login">Sign in</router-link>.</p>
     <p>Would you like to return home? <router-link to="/">Home</router-link>.</p>
   </div>
@@ -93,7 +95,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   background-color: #000;
   color: #0077cc;
   font-family: 'Limelight', sans-serif;
@@ -106,6 +107,10 @@ export default {
 
 /* Add padding to containers */
 .container {
+  padding: 16px;
+  background-color: #000;
+}
+.container-signin{
   padding: 16px;
   background-color: #000;
 }
