@@ -59,15 +59,53 @@ export default {
   methods: {
     async fetchUserData() {
       try {
-        const response = await axios.get('https://localhost:7254/actyin/ChooseActivity/actyin/getAllChosenActivities');
+        //const response = await axios.get('https://localhost:7254/actyin/ChooseActivity/actyin/getAllChosenActivities');
         
-        this.activities = response.data;
-        const firstActivity = this.activities[0];
+        
+        const chosenDate = localStorage.getItem('Date');
+        const chosenActivity = localStorage.getItem('Activity');
+
+        // Make sure chosenDate and chosenActivity are not null or undefined before creating the URL
+        if (chosenDate && chosenActivity) {
+          const chooseByDate = await axios.get(`https://localhost:7254/actyin/ChooseActivity/actyin/getChosenActivitiesByDate?date=${chosenDate}&activity=${chosenActivity}`);
+          console.log('Choose by Date and Activity', chooseByDate.data);
+          this.activities = chooseByDate.data;
+          const firstActivity = this.activities[0];
+
+        console.log('Activities', this.activities);
 
         // Set the retrieved data to userData (if needed)
         if (firstActivity && firstActivity.athleteInfoDTO) {
           this.userData = firstActivity.athleteInfoDTO;
         }
+          // Store the list response in a variable
+          const chooseByDateList = chooseByDateResponse.data;
+          // Assuming chooseByDate is an array of items
+          this.activities.forEach(async (item) => {
+            // Make a call to the backend for each item
+            try {
+              const resultForItem = await axios.get(`https://localhost:7254/actyin/File/getPhotoByUsername?username=${item.username}`);
+              // Process the resultForItem as needed
+              console.log('Details for item:', resultForItem.data);
+            } catch (error) {
+              // Handle errors for each item
+              console.error(`Error fetching details for item with id ${item.username}:`, error.message);
+            }
+          });
+        } else {
+          console.error('Invalid date or activity in local storage.');
+        }
+        
+
+        const localStorageActivityId = localStorage.getItem('Activity');
+
+        this.activities = response.data;
+        console.log('data', chooseByDate);
+
+        // Filter the activities by the identifier from local storage
+        //const filteredActivities = this.activitiesByDate.filter(activity => activity.id === localStorageActivityId);
+
+        console.log('Filtered Activities by Date and Local Storage Activity Id', filteredActivities);
 
         const responseUser = await axios.get('https://localhost:7254/actyin/ChooseActivity/actyin/getUserById/'+'${activity.athleteInfoDTO.username}');
         

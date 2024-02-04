@@ -38,7 +38,7 @@ function book() {
 function isFutureDate(date) {
   const selectedDate = new Date(date);
   const today = new Date();
-  today.setHours(0, 0, 0, 0); // Set current time to midnight for comparison
+  today.setHours(0, 0, 0, 0); 
   return selectedDate > today;
 }
 
