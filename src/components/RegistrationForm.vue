@@ -74,8 +74,7 @@ export default {
           console.log(`Bearer ${accessToken.token}`);
 
           // Optionally, you can navigate to a different page after successful registration
-          // For example, redirect to the home page:
-          this.$router.push('/#/main');
+          this.$router.push('/main');
         } else {
           console.error('Access token not found in the response.');
         }
