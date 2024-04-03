@@ -25,7 +25,8 @@
     <div v-else>
       <li>
         <h2>We have no records for this activity or this date.<br> We will inform you by email.</h2>
-        <button type="submit" class="buttonSignIn"></button>
+        <h2><br> Press the button to save your choice.</h2>
+        <router-link to="/"><ul><button type="submit" class="registerbtn" @click="goToMainPage">Go to Home Page</button> </ul></router-link>
       </li>
     </div>
   </div>
@@ -49,66 +50,29 @@ export default {
         city: '',
         favoriteActivity: ''
       },
-      activities: []
+      activities: [],
+      saveChoosenActivityCalled: false
     };
   },
   created() {
-    // Fetch data from your API and set it to userData and activities
     this.fetchUserData();
   },
   methods: {
     async fetchUserData() {
       try {
-        //const response = await axios.get('https://localhost:7254/actyin/ChooseActivity/actyin/getAllChosenActivities');
-        
-        
         const chosenDate = localStorage.getItem('Date');
         const chosenActivity = localStorage.getItem('Activity');
 
-        // Make sure chosenDate and chosenActivity are not null or undefined before creating the URL
         if (chosenDate && chosenActivity) {
           const chooseByDate = await axios.get(`https://localhost:7254/actyin/ChooseActivity/actyin/getChosenActivitiesByDate?date=${chosenDate}&activity=${chosenActivity}`);
-          console.log('Choose by Date and Activity', chooseByDate.data);
           this.activities = chooseByDate.data;
-          const firstActivity = this.activities[0];
 
-        console.log('Activities', this.activities);
-
-        // Set the retrieved data to userData (if needed)
-        if (firstActivity && firstActivity.athleteInfoDTO) {
-          this.userData = firstActivity.athleteInfoDTO;
-        }
-          // Store the list response in a variable
-          const chooseByDateList = chooseByDateResponse.data;
-          // Assuming chooseByDate is an array of items
-          this.activities.forEach(async (item) => {
-            // Make a call to the backend for each item
-            try {
-              const resultForItem = await axios.get(`https://localhost:7254/actyin/File/getPhotoByUsername?username=${item.username}`);
-              // Process the resultForItem as needed
-              console.log('Details for item:', resultForItem.data);
-            } catch (error) {
-              // Handle errors for each item
-              console.error(`Error fetching details for item with id ${item.username}:`, error.message);
-            }
-          });
+          if (this.activities.length > 0 && this.activities[0].athleteInfoDTO) {
+            this.userData = this.activities[0].athleteInfoDTO;
+          }
         } else {
           console.error('Invalid date or activity in local storage.');
         }
-        
-
-        const localStorageActivityId = localStorage.getItem('Activity');
-
-        this.activities = response.data;
-        console.log('data', chooseByDate);
-
-        // Filter the activities by the identifier from local storage
-        //const filteredActivities = this.activitiesByDate.filter(activity => activity.id === localStorageActivityId);
-
-        console.log('Filtered Activities by Date and Local Storage Activity Id', filteredActivities);
-
-        const responseUser = await axios.get('https://localhost:7254/actyin/ChooseActivity/actyin/getUserById/'+'${activity.athleteInfoDTO.username}');
-        
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -116,11 +80,39 @@ export default {
     getPhotoUrl(activity) {
       return activity && activity.athleteInfoDTO
         ? `https://localhost:7254/actyin/File/getPhotoByUsername?username=${activity.athleteInfoDTO.username}`
-        : ''; // You can provide a default image URL or handle this case as needed
+        : ''; 
+    },
+    saveChoosenActivity() {
+      if (!this.saveChoosenActivityCalled) {
+        const Username = localStorage.getItem('Username');
+        const Date = localStorage.getItem('Date');
+        const Activity = localStorage.getItem('Activity');
+        
+        const dataToSave = {
+          username: Username,
+          dateTime: Date,
+          activity: Activity
+        };
+
+        axios.post('https://localhost:7254/actyin/ChooseActivity/actyin/createNewActivity', dataToSave)
+          .then(response => {
+            console.log('Data saved to the database:', response.data);
+          })
+          .catch(error => {
+            console.error('Error saving data to the database:', error);
+          });
+
+        this.saveChoosenActivityCalled = true;
+      }
+    },
+    goToMainPage() {
+      this.saveChoosenActivity();
+      this.$router.push('/main');
     }
   }
 };
 </script>
+
 
 
 <style>

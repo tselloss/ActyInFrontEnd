@@ -29,7 +29,7 @@ export default {
 
       axios.post('https://localhost:7254/actyin/ChooseActivity/actyin/createNewActivity', dataToSave)
   .then(response => {
-    console.log('Data saved to the database:', response.data);
+    console.log('Data saved to the database!:', response.data);
     // You can update the local component state if needed
     this.dataToSave = dataToSave;
     console.log('Data to save:', this.dataToSave);
