@@ -2,32 +2,26 @@
   <div class="container">
     <h1>Potential ActioNist</h1>
 
-    <div v-if="activities.length > 0">
-      <li>
-        <img :src="getPhotoUrl(activities[0])" class="img" width="350" height="400">
-      </li>
-      <ul>
-        <li>
-          <button type="submit" class="registerbtn3">
-            <img src="../assets/tick.png" class="boximg">
-          </button>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <button type="submit" class="registerbtn3">
-            <img src="../assets/next.png" class="boximg">
-          </button>
-        </li>
-      </ul>
+    <div v-if="this.activities.length > 0">
+      <div class="user-block">
+        <img :src="getPhotoUrl()" class="user-photo" width="350" height="400">
+      </div>
+      <div class="action-buttons">
+        <button type="submit" class="registerbtn3" @click="saveChoosenActivity">
+          <img src="../assets/tick.png" class="boximg">
+        </button>
+        <button type="submit" class="registerbtn3" @click="nextActivity">
+          <img src="../assets/next.png" class="boximg">
+        </button>
+      </div>
     </div>
 
     <div v-else>
-      <li>
+      <div class="no-records">
         <h2>We have no records for this activity or this date.<br> We will inform you by email.</h2>
         <h2><br> Press the button to save your choice.</h2>
-        <router-link to="/"><ul><button type="submit" class="registerbtn" @click="goToMainPage">Go to Home Page</button> </ul></router-link>
-      </li>
+        <router-link to="/"><button type="submit" class="registerbtn" @click="goToMainPage">Go to Home Page</button></router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -51,7 +45,12 @@ export default {
         favoriteActivity: ''
       },
       activities: [],
-      saveChoosenActivityCalled: false
+      currentIndex: 0,
+      retrievedUser : {
+        username: '',
+        date: '',
+        activity: ''
+      }
     };
   },
   created() {
@@ -66,10 +65,7 @@ export default {
         if (chosenDate && chosenActivity) {
           const chooseByDate = await axios.get(`https://localhost:7254/actyin/ChooseActivity/actyin/getChosenActivitiesByDate?date=${chosenDate}&activity=${chosenActivity}`);
           this.activities = chooseByDate.data;
-
-          if (this.activities.length > 0 && this.activities[0].athleteInfoDTO) {
-            this.userData = this.activities[0].athleteInfoDTO;
-          }
+          console.log('Retrive data', this.activities);
         } else {
           console.error('Invalid date or activity in local storage.');
         }
@@ -77,10 +73,11 @@ export default {
         console.error('Error fetching data:', error);
       }
     },
-    getPhotoUrl(activity) {
-      return activity && activity.athleteInfoDTO
-        ? `https://localhost:7254/actyin/File/getPhotoByUsername?username=${activity.athleteInfoDTO.username}`
-        : ''; 
+    getPhotoUrl() {      
+      const currentActivity = this.activities[this.currentIndex];
+      return currentActivity
+        ? `https://localhost:7254/actyin/File/getPhotoByUsername?username=${currentActivity.username}`
+        : '';         
     },
     saveChoosenActivity() {
       if (!this.saveChoosenActivityCalled) {
@@ -108,6 +105,12 @@ export default {
     goToMainPage() {
       this.saveChoosenActivity();
       this.$router.push('/main');
+    },
+    nextActivity() {
+      this.currentIndex++;
+    },
+    previousActivity() {
+      this.currentIndex--;
     }
   }
 };
@@ -286,6 +289,27 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.user-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-photo {
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.no-records {
+  text-align: center;
 }
 </style>
 
