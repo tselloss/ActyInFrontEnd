@@ -51,7 +51,7 @@
           ActyIn Headquarters
         </p>
         <p>
-          [Your Address]
+          We are an idea, but you can find us very soon!
         </p>
       </div>
     </div>
@@ -67,7 +67,7 @@
           Email: info@actyin.com
         </p>
         <p>
-          Phone: [Your Phone Number]
+          Phone: +30 6987900000
         </p>
       </div>
     </div>
