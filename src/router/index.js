@@ -32,11 +32,11 @@ const routes = [
     name: 'user',
     component: UserProfileView
   },
-  {
-    path: '/match',
-    name: 'match',
-    component: MatchFormView
-  },
+  // {
+  //   path: '/match',
+  //   name: 'match',
+  //   component: MatchFormView
+  // },
   {
     path: '/main',
     name: 'main',

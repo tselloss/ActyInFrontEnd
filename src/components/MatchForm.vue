@@ -2,12 +2,12 @@
   <div class="container">
     <h1>Potential ActioNist</h1>
 
-    <div v-if="this.activities.length > 0">
+    <div v-if="this.activities.length > 0 && !emptyArray">
       <div class="user-block">
         <img :src="getPhotoUrl()" class="user-photo" width="350" height="400">
       </div>
       <div class="action-buttons">
-        <button type="submit" class="registerbtn3" @click="saveChoosenActivity">
+        <button type="submit" class="registerbtn3" @click="saveBookingActivity">
           <img src="../assets/tick.png" class="boximg">
         </button>
         <button type="submit" class="registerbtn3" @click="nextActivity">
@@ -17,7 +17,7 @@
     </div>
 
     <div v-else>
-      <div class="no-records">
+      <div class="no-records" v-if="emptyArray">
         <h2>We have no records for this activity or this date.<br> We will inform you by email.</h2>
         <h2><br> Press the button to save your choice.</h2>
         <router-link to="/"><button type="submit" class="registerbtn" @click="goToMainPage">Go to Home Page</button></router-link>
@@ -50,7 +50,16 @@ export default {
         username: '',
         date: '',
         activity: ''
-      }
+      },
+      bookingData:
+      {
+        UsernamePicker: '',
+        UsernameSelected: '',
+        selectedDate: '',
+        activityName: '',
+        isCanceled: ''
+      },
+      emptyArray: false
     };
   },
   created() {
@@ -75,6 +84,12 @@ export default {
     },
     getPhotoUrl() {      
       const currentActivity = this.activities[this.currentIndex];
+      localStorage.setItem('SelectedBuddy', currentActivity.username);
+      //const loggedUsername = localStorage.getItem('Username');
+      // if (currentActivity && currentActivity.username === loggedUsername) {
+      //   this.currentIndex++;
+      //   return '';
+      // }
       return currentActivity
         ? `https://localhost:7254/actyin/File/getPhotoByUsername?username=${currentActivity.username}`
         : '';         
@@ -102,13 +117,39 @@ export default {
         this.saveChoosenActivityCalled = true;
       }
     },
+    saveBookingActivity() {
+        const UsernamePicker = localStorage.getItem('Username');
+        const Date = localStorage.getItem('Date');
+        const Activity = localStorage.getItem('Activity');
+        const UsernameSelected = localStorage.getItem('SelectedBuddy');
+
+        this.bookingData = {
+          UsernamePicker : UsernamePicker,
+          UsernameSelected: UsernameSelected,
+          selectedDate: Date,
+          activityName: Activity,
+          isCanceled: false 
+        };
+
+        axios.post('https://localhost:7254/actyin/Booking/actyin/saveBooking', this.bookingData)
+          .then(response => {
+            console.log('Your booking is saved to our database:', response.data);
+            this.$router.push('/user');
+          })
+          .catch(error => {
+            console.error('Error saving data to the database:', error);
+          });          
+    },
     goToMainPage() {
       this.saveChoosenActivity();
       this.$router.push('/main');
     },
     nextActivity() {
-      this.currentIndex++;
-    },
+  this.currentIndex++;
+  if (this.currentIndex >= this.activities.length) {
+    this.emptyArray = true;    
+  }
+},
     previousActivity() {
       this.currentIndex--;
     }
