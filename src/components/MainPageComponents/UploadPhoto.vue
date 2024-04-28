@@ -49,6 +49,7 @@ export default {
       axios.post('https://localhost:7254/actyin/File/UploadProfilePhoto', formData)
         .then(response => {
           console.log('Photo uploaded successfully:', response.data);
+          this.$router.push('/user');
         })
         .catch(error => {
           console.error('Error uploading photo:', error);
