@@ -7,12 +7,8 @@
         <img :src="getPhotoUrl()" class="user-photo" width="350" height="400">
       </div>
       <div class="action-buttons">
-        <button type="submit" class="registerbtn3" @click="saveBookingActivity">
-          <img src="../assets/tick.png" class="boximg">
-        </button>
-        <button type="submit" class="registerbtn3" @click="nextActivity">
-          <img src="../assets/next.png" class="boximg">
-        </button>
+        <button type="submit" class="joinButton" @click="saveBookingActivity">Book now</button>
+        <button type="submit" class="registerbtn" @click="nextActivity">Next</button>
       </div>
     </div>
 
@@ -183,10 +179,6 @@ img {
   width: 80%;
 }
 
-.boximg{
-  border-radius: 20%;
-  width: 100%;
-}
 /* Add padding to containers */
 .container {
   padding: 16px;
