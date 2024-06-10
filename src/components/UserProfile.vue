@@ -83,7 +83,6 @@ export default {
 
           // Update userData with the fetched data
           this.userData = response.data;
-          this.userData.password = '*****';
           console.log(this.userData)
         } else {
           console.error('Username not found in localStorage');
