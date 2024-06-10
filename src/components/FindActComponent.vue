@@ -2,7 +2,7 @@
   <div>
     <h2>Choose an Activity</h2>
     <div class="activity-block" v-for="activity in activities" :key="activity.id" @click="selectActivity(activity)">
-      <img :src="`https://localhost:7254/actyin/File/getPhotoForSports?sport=${activity.name.toLowerCase()}`" class="activity-image">
+      <img :src="`https://localhost:7254/actyin/File/getPhotoForSports?sport=${activity.name.toLowerCase()}`" class="activity-image" alt="">
       <p>{{ activity.name }}</p>
     </div>
 

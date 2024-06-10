@@ -8,7 +8,7 @@
     </h3>
   </ul>
   <div class="halfpage">
-    <img src="../assets/pooltable.jpg" class="responsivePhoto" width="200" height="200">
+    <img src="../assets/pooltable.jpg" class="responsivePhoto" width="200" height="200" alt="">
   </div>
 </div>
 </template>

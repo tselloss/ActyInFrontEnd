@@ -1,7 +1,7 @@
 <template>
   <div>    
     <h1>User Profile</h1>
-    <li><img :src="`https://localhost:7254/actyin/File/getPhotoByUsername?username=${this.username}`" class="img" width="300" height="300"></li>
+    <li><img :src="`https://localhost:7254/actyin/File/getPhotoByUsername?username=${this.username}`" class="img" width="300" height="300" alt=""></li>
     <hr>
   </div>
   <div class="responsive">

@@ -3,7 +3,7 @@
   <h1>Welcome to ACTYIN</h1>
   <div class="responsive">    
   <div class="halfpage">    
-  <img src="../assets/basketball.jpg" class="responsivePhoto" width="200" height="200">
+  <img src="../assets/basketball.jpg" class="responsivePhoto" width="200" height="200" alt="">
 </div> 
 <router-link to="/login"><ul><button type="submit" class="joinButton">Join Now</button></ul></router-link>
 <router-link to="/register"><ul><button type="submit" class="registerbtn">Register</button> </ul></router-link>

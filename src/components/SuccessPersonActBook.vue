@@ -8,7 +8,6 @@
 
 <script>
 import axios from 'axios';
-import moment from 'moment';
 
 export default {
   name: 'SuccessPersonActBook',
@@ -18,12 +17,12 @@ export default {
   methods: {
     saveChoosenActivity() {
       const Username = localStorage.getItem('Username');
-      const Date = localStorage.getItem('Date');
+      const DateTime = localStorage.getItem('Date');
       const Activity = localStorage.getItem('Activity');
       
       const dataToSave = {
         username: Username,
-        dateTime: Date,
+        dateTime: DateTime,
         activity: Activity
       };
 
