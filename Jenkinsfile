@@ -1,9 +1,4 @@
 pipeline {
-    agent {
-        docker {
-          image 'node:10.11.0-alpine'
-        }
-     }
     agent any
     tools{
         jdk  'jdk17'
@@ -25,6 +20,9 @@ pipeline {
         
     stage('Install depencencies') {
             steps {
+                docker {
+                  image 'node:10.11.0-alpine'
+                }
                 sh "npm install"
             }
         }
