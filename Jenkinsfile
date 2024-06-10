@@ -17,6 +17,12 @@ pipeline {
             }
         }
         
+    stage('Install depencencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        
         stage('OWASP Dependency Check') {
             steps {
                 dependencyCheck additionalArguments: ' --scan ./ ', odcInstallation: 'DC'
