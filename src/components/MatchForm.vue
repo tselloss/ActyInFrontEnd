@@ -93,12 +93,12 @@ export default {
     saveChoosenActivity() {
       if (!this.saveChoosenActivityCalled) {
         const Username = localStorage.getItem('Username');
-        const Date = localStorage.getItem('Date');
+        const DateTime = localStorage.getItem('Date');
         const Activity = localStorage.getItem('Activity');
         
         const dataToSave = {
           username: Username,
-          dateTime: Date,
+          dateTime: DateTime,
           activity: Activity
         };
 
@@ -115,14 +115,14 @@ export default {
     },
     saveBookingActivity() {
         const UsernamePicker = localStorage.getItem('Username');
-        const Date = localStorage.getItem('Date');
+        const DateTime = localStorage.getItem('Date');
         const Activity = localStorage.getItem('Activity');
         const UsernameSelected = localStorage.getItem('SelectedBuddy');
 
         this.bookingData = {
           UsernamePicker : UsernamePicker,
           UsernameSelected: UsernameSelected,
-          selectedDate: Date,
+          selectedDate: DateTime,
           activityName: Activity,
           isCanceled: false 
         };
