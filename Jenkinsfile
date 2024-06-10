@@ -31,21 +31,21 @@ pipeline {
             }
         }
 
-        stage('File System Scan') {
+       stage('File System Scan') {
             steps {
-                sh '/var/jenkins_home/workspace/trivy fs .'
+                sh "/var/jenkins_home/workspace/trivy fs ."
             }
         }
 
         stage('Sonarqube Image Scan') {
             steps {
-                sh 'trivy repo https://github.com/SonarSource/docker-sonarqube.git'
+                 sh "/var/jenkins_home/workspace/trivy repo https://github.com/SonarSource/docker-sonarqube.git"
             }
         }
 
         stage('Jenkins Image Scan') {
             steps {               
-                sh "trivy image ${JENKINS_IMAGE_NAME}"
+                sh "/var/jenkins_home/workspace/trivy image ${JENKINS_IMAGE_NAME}"
             }
         }
         
