@@ -3,6 +3,7 @@ pipeline {
     tools{
         jdk  'jdk17'
         maven  'maven3'
+        node 'nodejs'
     }    
     environment
     {
@@ -18,12 +19,11 @@ pipeline {
             }
         }
         
-    stage('Install depencencies') {
+    stage('Install Dependencies') {
             steps {
-                docker {
-                  image 'node:10.11.0-alpine'
+                script {
+                    sh 'npm install'
                 }
-                sh "npm install"
             }
         }
         
