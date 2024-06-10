@@ -1,4 +1,9 @@
 pipeline {
+    agent {
+        docker {
+          image 'node:10.11.0-alpine'
+        }
+     }
     agent any
     tools{
         jdk  'jdk17'
@@ -10,11 +15,7 @@ pipeline {
         SONARQUBE_IMAGE_NAME = 'sonarqube:latest'
         JENKINS_IMAGE_NAME = 'jenkins/jenkins'
     }
-   agent {
-        docker {
-          image 'node:10.11.0-alpine'
-        }
-     }
+   
     stages {
         stage('Git Checkout') {
             steps {
