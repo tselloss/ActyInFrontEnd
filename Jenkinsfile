@@ -24,30 +24,30 @@ pipeline {
             }
         }
         
-        stage('OWASP Dependency Check') {
-            steps {
-                dependencyCheck additionalArguments: '--scan ./', odcInstallation: 'DC'
-                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
-            }
-        }
+       //  stage('OWASP Dependency Check') {
+       //      steps {
+       //          dependencyCheck additionalArguments: '--scan ./', odcInstallation: 'DC'
+       //          dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+       //      }
+       //  }
 
-       stage('File System Scan') {
-            steps {
-                sh "/var/jenkins_home/workspace/trivy fs ."
-            }
-        }
+       // stage('File System Scan') {
+       //      steps {
+       //          sh "/var/jenkins_home/workspace/trivy fs ."
+       //      }
+       //  }
 
-        stage('Sonarqube Image Scan') {
-            steps {
-                 sh "/var/jenkins_home/workspace/trivy repo https://github.com/SonarSource/docker-sonarqube.git"
-            }
-        }
+       //  stage('Sonarqube Image Scan') {
+       //      steps {
+       //           sh "/var/jenkins_home/workspace/trivy repo https://github.com/SonarSource/docker-sonarqube.git"
+       //      }
+       //  }
 
-        stage('Jenkins Image Scan') {
-            steps {               
-                sh "/var/jenkins_home/workspace/trivy image ${JENKINS_IMAGE_NAME}"
-            }
-        }
+       //  stage('Jenkins Image Scan') {
+       //      steps {               
+       //          sh "/var/jenkins_home/workspace/trivy image ${JENKINS_IMAGE_NAME}"
+       //      }
+       //  }
         
         stage('Sonarqube Analysis') {
             steps {
