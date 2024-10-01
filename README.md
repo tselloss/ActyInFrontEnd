@@ -34,6 +34,22 @@ This front-end project provides a user-friendly interface for scheduling sports 
    git clone https://github.com/your-username/frontend-repo-name.git
 
 2. Install front-end dependencies:
-```bash
+   ```bash
    npm install
+
+3. Run the front-end:
+   ```bash
+   npm run serve
+
+4. Access the application at:
+   ```bash
+   http://localhost:8080
+
+
+### Usage
+1. Register or Login: Users can register or log in to their account.
+
+2. Select Activities: After logging in, users can select sports activities they want to participate in and schedule them.
+
+3. Partner Matching: Once an activity is scheduled, the platform matches users with available partners based on time and activity preferences.
 
