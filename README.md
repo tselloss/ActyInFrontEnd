@@ -1,58 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<frontEndProject>
-    <name>Web-Based Social Activity Platform - Front-End</name>
-    <description>This repository contains the front-end part of a full-stack application that allows users to organize and participate in sports activities with strangers.</description>
+# Web-Based Social Activity Platform - Front-End
 
-    <tableOfContents>
-        <item>Overview</item>
-        <item>Features</item>
-        <item>Tech Stack</item>
-        <item>Front-End</item>
-        <item>Installation</item>
-        <item>Usage</item>
-        <item>Contributing</item>
-        <item>License</item>
-    </tableOfContents>
+This repository contains the front-end part of a full-stack application that allows users to organize and participate in sports activities with strangers.
 
-    <overview>
-        <purpose>This front-end project provides a user-friendly interface for scheduling sports activities and matching with other participants using the Vue.js framework.</purpose>
-    </overview>
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-    <features>
-        <feature>Responsive UI: The application adapts to different screen sizes, offering an optimal user experience on desktops, tablets, and mobile devices.</feature>
-        <feature>Vue Router: Enables seamless navigation between different pages without reloading.</feature>
-        <feature>Vuex: Manages the state of the application and synchronizes data across components, ensuring smooth user interaction.</feature>
-    </features>
+## Overview
+This front-end project provides a user-friendly interface for scheduling sports activities and matching with other participants using the Vue.js framework.
 
-    <techStack>
-        <frontEndFramework>Vue.js</frontEndFramework>
-        <devOpsTools>Docker, Jenkins, SonarQube, GitHub</devOpsTools>
-    </techStack>
+## Features
+- **Responsive UI**: The application adapts to different screen sizes, offering an optimal user experience on desktops, tablets, and mobile devices.
+- **Vue Router**: Enables seamless navigation between different pages without reloading.
+- **Vuex**: Manages the state of the application and synchronizes data across components, ensuring smooth user interaction.
 
-    <installation>
-        <prerequisites>
-            <item>Node.js & npm</item>
-        </prerequisites>
+## Tech Stack
+- **Front-End Framework**: Vue.js
+- **DevOps Tools**: Docker, Jenkins, SonarQube, GitHub
 
-        <steps>
-            <step>Clone the repository: <code>git clone https://github.com/your-username/frontend-repo-name.git</code></step>
-            <step>Install front-end dependencies: <code>npm install</code></step>
-            <step>Run the front-end: <code>npm run serve</code></step>
-            <step>Access the application at <url>http://localhost:8080</url></step>
-        </steps>
-    </installation>
+## Installation
 
-    <usage>
-        <step>Register or Login: Users can register or log in to their account.</step>
-        <step>Select Activities: After logging in, users can select sports activities they want to participate in and schedule them.</step>
-        <step>Partner Matching: Once an activity is scheduled, the platform matches users with available partners based on time and activity preferences.</step>
-    </usage>
+### Prerequisites
+- Node.js & npm
 
-    <contributing>
-        <guidelines>Contributions are welcome! Please fork the repository and create a pull request with your changes. Ensure that your code adheres to the project style guide and includes necessary tests.</guidelines>
-    </contributing>
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/frontend-repo-name.git
 
-    <license>
-        <type>This project is licensed under the MIT License.</type>
-    </license>
-</frontEndProject>
+2. Install front-end dependencies:
+```bash
+   npm install
+
