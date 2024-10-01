@@ -8,8 +8,6 @@ This repository contains the front-end part of a full-stack application that all
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 This front-end project provides a user-friendly interface for scheduling sports activities and matching with other participants using the Vue.js framework.
